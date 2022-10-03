@@ -1,7 +1,13 @@
+:root {
+  --keyColor: #ffab40;
+  --backgroundColor: #222;
+}
+
 body {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
   color: white;
-  background-color: #222;
+  background-color: var(--backgroundColor);
 }
 
 .background-pattern {
@@ -34,8 +40,69 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
-  font-family: 'EB Garamond', serif;
   font-weight: 700;
+  letter-spacing: 1pt;
+}
+
+i {
+  font-style: normal;
+  text-align: justify;
+  display: block;
+}
+
+c {
+  font-weight: 800;
+  background-color:var(--keyColor);
+  color: var(--backgroundColor);
+  text-transform: uppercase;
+}
+
+b {
+  background-color:white;
+  color: var(--backgroundColor);
+}
+
+ul {
+  position: relative;
+	list-style: none;
+	margin-left: 0;
+  padding-top: 6pt;
+	padding-left: 1.2em;
+}
+
+ul li:before {
+	content: "➔";
+	position: absolute;
+	left: 0;
+}
+
+a {
+  color: var(--backgroundColor);
+  background-color: white;
+  font-weight: 600;
+}
+
+a:hover {
+  color: white;
+  background-color: transparent;
+}
+
+img {
+  width: 100%;
+}
+
+#navbar {
+  background-color: rgba(20, 20, 20, 0.5);
+  box-shadow: rgba(20, 20, 20, 0.5) 0 10px 10px;
+}
+
+#navbar li::before {
+content: none;
+}
+
+#logo {
+  width: 80%;
+
 }
 
 #subtitle {
@@ -56,6 +123,10 @@ h1, h2, h3, h4, h5, h6 {
     background-color: blue;
 }
 
+section {
+  transition: all 0.05s ease;
+}
+
 #header {
   position: absolute;
   width: 100%;
@@ -65,25 +136,46 @@ h1, h2, h3, h4, h5, h6 {
   height: 600px;
 }
 
+#triforce h1 {
+  font-weight: 900;
+  font-size: x-large;
+  letter-spacing: normal;
+  background-color: var(--keyColor);
+  color: var(--backgroundColor);
+  text-transform: uppercase;
+  display: inline-block;
+  margin-top: 12pt;
+  white-space: nowrap;
+}
+/*
+
+#pillars {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0) 100%);
+}
+
 .dna-card {
   position: relative;
   transition: all 0.5s ease;
 }
 
 .dna-card-content {
-  width: 90%;
+  width: 100%;
   top: 0;
-  left: 5%;
   position: absolute;
   transition: all 0.5s ease;
   transform-style: preserve-3d;
   backface-visibility: hidden;
+  text-align: center;
+}
+
+.dna-card .dna-card-content p {
+  font-size: small;
 }
 
 .dna-card-frame {
-  box-shadow: rgb(0 0 0 / 50%) 7px 7px 20px;
   position: relative;
   backface-visibility: visible;
+  box-shadow: rgb(0 0 0 / 100%) 7px 7px 50px;
 }
 
 .dna-card-front {
@@ -97,7 +189,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .dna-card-front img {
-  width: 100%;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 5%;
   position: relative;
 }
 
@@ -113,27 +207,64 @@ h1, h2, h3, h4, h5, h6 {
 .dna-card:hover {
   transform: rotateZ(5deg) scale(1.1);
 }
+*/
 
-.nav-pills {
-  margin-bottom: 6px;
+#projects i {
+  display: unset;
+  font-style: italic;
+}
+
+#game-image {
+  width: 100%;
+  mask-mode: alpha;
+  mask-image: url(img/game-mask1.png);
+}
+
+#team img {
+  padding-bottom: 2vh;
+  filter: drop-shadow(4pt 4pt 0em var(--keyColor))
+  drop-shadow(4pt -4pt 0em var(--keyColor))
+  drop-shadow(-4pt -4pt 0em var(--keyColor))
+  drop-shadow(-4pt 4pt 0em var(--keyColor)
+  );
+}
+
+#team h1 {
+  font-weight: 100;
+  text-transform: none;
+  font-size: large;
+  letter-spacing: 0;
+}
+
+#team h1 b {
+  color: white;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+#team p b {
+  background-color: var(--keyColor);
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
 .nav-pills .nav-link {
   margin: 8px 8x;
-  color: gray;
-  transition: border 0.5s ease, color, 0.5s ease;
-  border-radius: 0;
-  border-bottom-width: 0px;
-  border-bottom-color: transparent;
-  border-style:groove;
+  color: white;
   padding-bottom: 1px;
+  display: inline-block;
+  margin: 10px;
+  padding: 0;
+  border-radius: 0;
+  transition: none;
+  text-transform: uppercase;
 }
 
 .nav-pills .nav-link.active {
-  color: white !important;
-  border-bottom-color: white;
-  border-bottom-width: 2px;
-  background-color: transparent;
+  color: var(--backgroundColor) !important;
+  background-color: var(--keyColor);
+  font-weight: 800;
 
 }
 
@@ -149,7 +280,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .colored {
-  background-color: #000;
+  background-color: var(--backgroundColor);
 }
 
 .round {
