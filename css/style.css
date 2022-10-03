@@ -221,6 +221,9 @@ section {
 }
 
 #team img {
+  display: flex;
+  margin: auto;
+  max-width: 50vw;
   padding-bottom: 2vh;
   filter: drop-shadow(4pt 4pt 0em var(--keyColor))
   drop-shadow(4pt -4pt 0em var(--keyColor))
@@ -249,21 +252,24 @@ section {
   text-transform: uppercase;
 }
 
-.nav-pills .nav-link {
-  margin: 8px 8x;
+.nav-link {
+  background-color: transparent;
+  margin: 8px 8x !important;
   color: white;
-  padding-bottom: 1px;
-  display: inline-block;
-  margin: 10px;
-  padding: 0;
-  border-radius: 0;
+  margin: 10px !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
   transition: none;
   text-transform: uppercase;
 }
 
-.nav-pills .nav-link.active {
+.nav-link:hover {
+  color: #ffab40;
+}
+
+.nav-link.active {
   color: var(--backgroundColor) !important;
-  background-color: var(--keyColor);
+  background-color: var(--keyColor) !important;
   font-weight: 800;
 
 }
