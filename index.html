@@ -1,12 +1,12 @@
+<!DOCTYPE HTML>
 <html>
-
 <head>
     <meta charset="utf-8">
     <title>Cool Corpse</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="css/style.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
     <link href="css/helpers.css" rel="stylesheet">
 </head>
 
@@ -20,7 +20,7 @@
                     <a class="nav-link" href="#home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#triforce">Triforce</a>
+                    <a class="nav-link" href="#triforce-before">Triforce</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#projects">Project</a>
@@ -42,14 +42,18 @@
 <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="300" class="scrollspy-example" tabindex="0">
     <div class="background-pattern"></div>
     <div class="background-gradient"></div>
+
         <section id="home" class="pt-150">
             <div class="container pt-50">
                 <div class="row mt-4 mb-4">
-                    <div class="col-lg-6 text-center">
+                    <div class="col text-center">
                         <img id="logo" src="img/CoolCorpse_Logo_003_White.png">
                         <div class="pt-50"></div>
+                        <h1>Stopped bleeding in 2022...</h1>
                     </div>
-                    <div class="col-lg-6">
+                </div>
+                <div class="row pt-150">
+                    <div class="col" id="startPageText">
                             <p>
                                 We are <c>COOL CORPSE</c>, a young indie game studio from Berlin / Brandenburg,
                                 founded by <a href="#team">three game developers</a>
@@ -66,203 +70,92 @@
             </div>
         </section>
 
-        <section id="triforce">
+        <div class="scroll-arrow">V        </div>
 
-            <div class="container">
+        <section id="triforce-before">
+            <div class="container-fluid pt-75">
                 <div class="row">
-                    <div class="col-lg-6">
-                        <p>
+                    <div class="col col-12 col-xl-6 left">
+                        <h1>Values & The <c>Triforce</c></h1>
+                        <p class="pt-100">
                             The discourse about games has diversified. It is divided into numerous, homogeneous communities with their own mechanisms, requirements, and history. Individual areas of game culture may never have contact with each other. In others, solidified disputes about content, values & contexts are conducted. And in the middle of it all sit the people who create the games - us. In such a diverse field of work, it was therefore important for us to agree on a common ground on which to build.
                         </p>
-                    </div>
-                    <div class="col-lg-6">
                         <p>
                             For this purpose, we have developed the <c>TRIFORCE</c>, a matrix based on six elements, which on the one hand describes our vision, but on the other hand also serves as a fixed point for decisions.
                             None of the elements is absolute, all are related to each other and will change over time. Nevertheless, the <c>TRIFORCE</c> unites our common ground as <c>COOL CORPSE</c>.
                         </p>
                     </div>
-                </div>
-            </div>
-
-            <div class="container pt-50">
-                <div class="row">
-                    <div class="col"></div>
-                    <div class="col col-12 col-lg-4"><include data="components/dna/dna2.html"></include></div>
-                    <div class="col"></div>
-                </div>
-                <div class="row">
-                    <div class="col col-12 col-lg-4">
-                        <include data="components/dna/dna1.html"></include>
-                        <include data="components/dna/dna3.html"></include>
-                    </div>
-                    <div class="col col-12 col-lg-4">
+                    <div class="col col-12 col-xl-6 right">
                         <img src="img/triforce.png">
                     </div>
-                    <div class="col col-12 col-lg-4">
+                </div>
+            </div>
+
+        </section>
+        <section id="triforce">
+
+            <div class="container-fluid" style="padding: 5vw;">
+                <div class="row gx-5">
+                    <div class="col  col-xl-4 scroll-fade">
+                        <include data="components/dna/dna1.html"></include>
+                    </div>
+                    <div class="col  col-xl-4 scroll-fade" off="5">
+                        <include data="components/dna/dna2.html"></include>
+                    </div>
+                    <div class="col  col-xl-4 scroll-fade"  off="10">
+                        <include data="components/dna/dna3.html"></include>
+                    </div>
+                    <div class="col col-xl-4 scroll-fade">
                         <include data="components/dna/dna4.html"></include>
+                    </div>
+                    <div class="col  col-xl-4 scroll-fade" off="5">
                         <include data="components/dna/dna5.html"></include>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col"></div>
-                    <div class="col col-12 col-lg-4"><include data="components/dna/dna6.html"></include></div>
-                    <div class="col"></div>
+                    <div class="col  col-xl-4 scroll-fade" off="10">
+                        <include data="components/dna/dna6.html"></include>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!--
-        <section id="dna">
-                <div class="container-fluid">
-                    <div class="row align-items-center m-4 gy-5">
+        <section  id="projects" class="pt-150">
+            <div class="container">
+                <div class="row ship-row">
+                    <div class="col">
+                        <div class="beamWrapper">
+                            <p>What we are working on...</p>
+                            <div class="beam">
 
-                        <div class="col-1"></div>
-
-                        <div class="col-2">
-                            <div class="dna-card">
-                                <img class="dna-card-content dna-card-frame" src="img/card.png"> 
-                                <div class="dna-card-content dna-card-front">
-                                    <h5>
-                                        WE LOVE GAMES.
-                                    </h5>
-                                    <img src="img/card-motif1.png"></im>
-                                </div>
-                                <div class="dna-card-content dna-card-back">
-                                    <h5>
-                                        WE LOVE GAMES.
-                                    </h5>                                
-                                    <i>
-                                        We share a profound passion for games.<br/>
-                                        The profound love is the motivation that drives us.<br/>
-                                        We strive to bring this love into the games we create.
-                                    </i>
-                                </div>
+                            </div>
+                            <div class="beam-text">
+                                <h3>Space Sprouts (AT)</h3>
                             </div>
                         </div>
-
-                            
-                        <div class="col-2">
-                            <div class="dna-card">
-                                <img class="dna-card-content dna-card-frame" src="img/card.png"> 
-                                <div class="dna-card-content dna-card-front">
-                                    <h5>
-                                        WE ARE PLAYFUL HUMANS.    
-                                    </h5>
-                                    <img src="img/card-motif2.png"></im>
-                                </div>
-                                <div class="dna-card-content dna-card-back">
-                                    <h5>
-                                        WE ARE PLAYFUL HUMANS.   
-                                    </h5>                                
-                                    <i>
-                                                Curiosity is fun.</br>
-                                                Interacting with games sparks curiosity.</br>
-                                                We create breathing worlds that players can engage with.
-                                    </i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-2">
-                            <div class="dna-card">
-                            <img class="dna-card-content dna-card-frame" src="img/card.png"> 
-                                <div class="dna-card-content dna-card-front">
-                                    <h5>
-                                        WE ARE MORTAL CRAFTSMEN.                                    
-                                    </h5>
-                                    <img src="img/card-motif3.png"></im>
-                                </div>
-                                <div class="dna-card-content dna-card-back">
-                                    <h5>
-                                        WE ARE MORTAL CRAFTSMEN.
-                                    </h5>
-                                    <i>
-                                        Creating something takes time. </br>
-                                        We craft our work with our combined lifetimes. </br>
-                                        We value lifetime as the most valuable resource we have.  
-                                    </i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-2">
-                            <div class="dna-card">
-                                <img class="dna-card-content dna-card-frame" src="img/card.png"> 
-                                <div class="dna-card-content dna-card-front">
-                                    <h5>
-                                        WE ARE GAME GARDENERS.
-                                    </h5>
-                                    <img src="img/card-motif4.png"></im>
-                                </div>
-                                <div class="dna-card-content dna-card-back">
-                                    <h5>
-                                        WE ARE GAME GARDENERS.
-                                    </h5>                                
-                                    <i>
-                                        Every good idea stems from a small spark.<br>
-                                        Each has their own needs and challenges.<br>
-                                        We tend to the needs of a concept and watch it blossom at its own pace.
-                                    </i>
-                                </div>
-                            </div>
-                        </div>
- 
-                        <div class="col-2">
-                            <div class="dna-card">
-                                <img class="dna-card-content dna-card-frame" src="img/card.png"> 
-                                <div class="dna-card-content dna-card-front">
-                                    <h5>
-                                        WE ARE MINDFUL DRIVERS.    
-                                    </h5>
-                                    <img src="img/card-motif1.png"></im>
-                                </div>
-                                <div class="dna-card-content dna-card-back">
-                                    <h5>
-                                        WE ARE MINDFUL DRIVERS. 
-                                    </h5>                                
-                                    <i>
-                                        Analyzing the past helps to learn.<br>
-                                        But only repeating the past leads to monotony.<br>
-                                        We watch not only the road behind us, but also the road ahead.                                        
-                                    </i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-1"></div>
-
+                    </div>
+                    <div class="col">
+                        <img src="img/ship.png" class="ship">
                     </div>
                 </div>
-            <div class="pt-50"></div>
-        </section>
-
-        -->
-
-        <section  id="projects">
-            <div class="container pt-150">
-                <div class="row">
+                <div class="row project-info-row">
                     <div class="col col-12 col-lg-6">
-                        <p>What we are working on...</p>
-                        <h3><c>Space Sprouts (AT)</c></h3>
-                        <br>
-                        <p>
+                        <p class="scroll-fade">
                             Space Sprouts is a narratively loaded sandbox. A spaceship crammed with unexpected objects to experiment with. Be curious and discover the story behind your journey and your ship. But the space is limited and the flight won't last forever. What are you going to do?
                         </p>
                         <br>
-                        <p>
+                        <p class="scroll-fade">
                             We create a limited space that follows its own rules and regularities and give the players tools with which they can playfully explore but also change.
                             It's about personal stories and self-efficacy <i>but in space!</i>
                         </p>
                         <br>
-                        <ul>
+                        <ul class="scroll-fade">
                             <li>Production Start: 2023</li>
                             <li>Planned Release: 2024</li>
                         </ul>
                     </div>
                     <div class="col col-12 col-lg-6">
-                        <img src="img/game.png" id="game-image">
+                        
                     </div>
-                </div>
+                </div>             
             </div>
             <div class="pt-250"></div>
         </section>
@@ -270,56 +163,62 @@
 
         <section id="team">
             <div class="container">
-                <div class="row">
+                <div class="row scroll-fade">
                     <div class="col text-center">
                         <h5>Hey! &zwnj; look... &zwnj; That's us! &zwnj; Mom, I'm on the internet!</h5>
                     </div>
                 </div>
                 <div class="row pt-50">
                     <div class="col col-12 col-lg-4 team-card p-5">
-                        <img src="img/lucas.png">
-                        <h1><b>Lucas Bödeker</b> | Co-Founder</h1>
-                        <p>
-                            is a <b>game designer & developer</b> based in Brandenburg. He enriches with his love for innovative design, iterative development processes and delicious fungal sauces.
-                        </p>
-                        <p>
-                            To the team he brings his core skills at the intersection of code & game design.
-                        </p>
-                        <ul>
-                            <li><a href="https://l-boe.de">personal Homepage</a></li>
-                            <li><a href="mailto://lucas@corpse.cool">lucas@corpse.cool</a></li>
-        
-                        </ul>
+                        <img src="img/lucas.png" class="scroll-fade">
+                        <div class="scroll-fade">
+                            <h1><b>Lucas Bödeker</b> | Co-Founder</h1>
+                            <p>
+                                is a <b>game designer & developer</b> based in Brandenburg. He enriches with his love for innovative design, iterative development processes and delicious fungal sauces.
+                            </p>
+                            <p>
+                                To the team he brings his core skills at the intersection of code & game design.
+                            </p>
+                            <ul>
+                                <li><a href="https://l-boe.de">personal Homepage</a></li>
+                                <li><a href="mailto://lucas@corpse.cool">lucas@corpse.cool</a></li>
+            
+                            </ul>
+                        </div>
                     </div>
                     <div class="col col-12 col-lg-4 team-card p-5">
-                        <img src="img/torben.png">
-                        <h1><b>Torben Bökemeyer</b> | Co-Founder</h1>
-                        <p>
-                            is a freelance <b>illustrator, UI designer & indie game developer</b> from Berlin. He also likes scratchy music and pretty lineart.
+                        <img src="img/torben.png" class="scroll-fade" off="5">
+                        <div class="scroll-fade" off="5">
+                            <h1><b>Torben Bökemeyer</b> | Co-Founder</h1>
+                            <p>
+                                is a freelance <b>illustrator, UI designer & indie game developer</b> from Berlin. He also likes scratchy music and pretty lineart.
 
-                        </p>
-                        <p>
-                            To the team he brings his skills as an art director & UI designer.
-                        </p>
-                        <br>
-                        <ul>
-                            <li><a href="https://torbenboekemeyer.me">personal Homepage</a></li>
-                            <li><a href="mailto://torben@corpse.cool">torben@corpse.cool</a></li>
-                        </ul>
+                            </p>
+                            <p>
+                                To the team he brings his skills as an art director & UI designer.
+                            </p>
+                            <br>
+                            <ul>
+                                <li><a href="https://torbenboekemeyer.me">personal Homepage</a></li>
+                                <li><a href="mailto://torben@corpse.cool">torben@corpse.cool</a></li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="col col-12 col-lg-4 team-card p-5">
-                        <img src="img/max.png">
-                        <h1><b>Max Bredlau</b> | Co-Founder</h1>
-                        <p>
-                            is a <b>level designer, game artist & producer</b> from East Berlin. On the side he tinkers with an old Opel and likes to meet new people.
-                        </p>
-                        <p>
-                            To the team he contributes with community management, level design & anything that makes noise.
-                        </p>
-                        <ul>
-                            <li><a href="https://bredlau.art/">personal Homepage</a></li>
-                            <li><a href="mailto://max@corpse.cool">max@corpse.cool</a></li>
-                        </ul>
+                        <img src="img/max.png" class="scroll-fade" off="10">
+                        <div class="scroll-fade" off="10">
+                            <h1><b>Max Bredlau</b> | Co-Founder</h1>
+                            <p>
+                                is a <b>level designer, game artist & producer</b> from East Berlin. On the side he tinkers with an old Opel and likes to meet new people.
+                            </p>
+                            <p>
+                                To the team he contributes with community management, level design & anything that makes noise.
+                            </p>
+                            <ul>
+                                <li><a href="https://bredlau.art/">personal Homepage</a></li>
+                                <li><a href="mailto://max@corpse.cool">max@corpse.cool</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -327,7 +226,7 @@
 
         <section id="previous">
             <div class="container pt-100">
-                <div class="row text-center">
+                <div class="row text-center scroll-fade">
                     <h2>Previous Experience</h2>
                 </div>
 

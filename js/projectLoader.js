@@ -31,7 +31,7 @@ $(() => {
                 //load links
                 var linkParent = $(instance).find("ul");
                 $.each(project["linkouts"], function (text, url) {
-                    $(linkParent).append($(['<li><a href=">',url,'">', text, '</a></li>'].join("")))
+                    $(linkParent).append($(['<li><a href="',url,'">', text, '</a></li>'].join("")))
                 });
 
                 //load description
@@ -39,6 +39,8 @@ $(() => {
 
             });
         });
+
+        window.dispatchEvent(new CustomEvent("onLoadedProjects"));
     });
 });
 
