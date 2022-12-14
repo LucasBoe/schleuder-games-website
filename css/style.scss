@@ -6,311 +6,94 @@ $xl: 1200px;
 $xxl: 1400px;
 
 :root {
-    --keyColor: #ffab40;
-    --backgroundColor: #222;
+    --backgroundColor: #FFF700;
+    --bezier: cubic-bezier(.5,-.75,.7,2);
 
     body {
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Source Sans Pro', sans-serif;
         font-weight: 300;
-        color: white;
+        color: black;
         background-color: var(--backgroundColor);
+    }
+
+    p {
+        font-size: 25px;
+
+        b {
+            font-weight: 700;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+
+        &:hover {
+            text-decoration:underline;
+        }
     }
     
     h1, h2, h3, h4, h5, h6 {
-        text-transform: uppercase;
-        font-weight: 700;
-        letter-spacing: 1pt;
-    }
-      
-    i {
-        font-style: normal;
-        text-align: justify;
-        display: block;
-    }
-      
-    c {
-        font-weight: 800;
-        background-color:var(--keyColor);
-        color: var(--backgroundColor);
-        text-transform: uppercase;
-    }
-      
-    b {
-        background-color:white;
-        color: var(--backgroundColor);
-    }
-      
-    ul {
-        position: relative;
-        list-style: none;
-        margin-left: 0;
-        padding-top: 6pt;
-        padding-left: 1.2em;
-    
-        li:before {
-            content: "➔";
-            position: absolute;
-            left: 0;
-        }
-    }
-      
-    a {
-        color: var(--backgroundColor);
-        background-color: white;
-        font-weight: 600;
-        &:hover {
-            color: white;
-            background-color: transparent;
-        }
-    }
-      
-    img {
-        width: 100%;
-    }
-      
-    .background-pattern {
-        background: url(../img/pattern2.png);
-        background-size: 25vw;
-        content: "";
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        display: block;
-        opacity: 0.05;
-        z-index: -20;
-    }
-      
-    .background-gradient {
-        background: radial-gradient(circle at center, transparent 25%, black 150%);
-        background-size: 33vw;
-        content: "";
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        display: block;
-        z-index: -10;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
     }
 
-    .scroll-fade {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-        transition: all 0.5s ease;
-        &.inActive {
-            opacity: 0;
-            transform: translateY(10em) scale(1.05);
-        }
+    h1 {
+        font-style: italic;
+        font-size: 70px;
     }
-}
 
-#navbar {
-    background-color: rgba(20, 20, 20, 0.5);
-    box-shadow: rgba(20, 20, 20, 0.5) 0 10px 10px;
-
-    li::before {
-        content: none;
-    }    
-
-    .nav-link {
-        background-color: transparent;
-        margin: 8px 8x !important;
-        color: white;
-        margin: 10px !important;
-        padding: 0 !important;
-        border-radius: 0 !important;
-        transition: none;
-        text-transform: uppercase;
+    .hover-spin {
+        transform: rotate(0) scale(1);
+        display: inline-flex;
+        transition: all 0.2s var(--bezier);
 
         &:hover {
-            color: #ffab40;
-          }
-      }
-      
-      .nav-link.active {
-        color: var(--backgroundColor) !important;
-        background-color: var(--keyColor) !important;
-        font-weight: 800;
-      }
-}
+            transform: rotate(8deg) scale(1.1);
+        }
+    }
 
-#home {
+    .container {
+        width: 50vh;
+    }
+
     #logo {
-        width: 60%;
-      
+        width: 80%;
     }
-    #startPageText {
-        max-width: 60%;
-        margin-left: 20%;
-    }
-}
 
-.scroll-arrow {
-    position: fixed;
-    bottom: 40vh;
-    left: 50%;
-    color: white;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    vertical-align: middle;
-    margin: auto;
-    font-size: xx-large;
-    transform: scaleX(1.5);
-    font-weight: 400;
-    animation-name: hover;
-    animation-duration: 1.5s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-timing-function: ease-in-out;
-}
+    .divider {
+        height: 2vh;
 
-@keyframes hover {
-    from {    bottom: 40vh; opacity: 1;}
-    to {    bottom: 43vh; opacity: 0;}
-  }
-
-#triforce-before {
-    padding: 5vw 5vw 0 5vw;
-
-    .right {
-        padding: 0 3%;
+        &::before, &::after {
+            content: "";
+            height: 2px;
+            width: 10vh;
+            display: inline-block;
+            background-color: black;
+        }
 
         img {
-            max-height: 40vh;
-            width: auto;
-            max-width: 60vw;
-            display: flex;
-            margin: auto;
-          }
-      }
-    
-    .left {
-        padding: 3%;
-        background-color: var(--keyColor);
-        color: #222;
-        margin-bottom: 5vh; 
-        z-index: -10;
-
-        c {
-            background-color: var(--backgroundColor);
-            color: white;
-          }
-        
-        h1 {
-            font-size: xx-large;
-          }
-    }
-}
-
-#triforce {
-    h1 {
-        font-weight: 900;
-        font-size: 1.8vh;
-        letter-spacing: normal;
-        background-color: var(--keyColor);
-        color: var(--backgroundColor);
-        text-transform: uppercase;
-        display: inline-block;
-        margin-top: 12pt;
-        white-space: nowrap;
-      }
-      img {
-        height: 5vh;
-        width: auto;
-        display: block;
-      }
-}
-
-#projects {
-    overflow-x: hidden; 
-
-    i {
-        display: unset;
-        font-style: italic;
+            height: 100%;
+            padding-top: 0.5vh;
+        }
     }
 
-    .ship-row {
-        height: 62pt;
-        @media (max-width: $lg) {
-            height: auto;
-        }
+    .socials {
+        a {
+            padding: 0 0.5vh;
+            display: inline-block;
+            transition: all 0.2s var(--bezier);
 
-        .ship {
-            z-index: 1;
-            position: relative;
-            height: 400pt;
-            width: auto;
-        }
-
-        .beamWrapper {
-            position: relative;
-            padding-top: 32pt;
-
-            .beam {
-                position: absolute;
-                background-color: var(--keyColor);
-                height: 26pt;
-                width: 200em;
-                transform: translateX(calc(-155em));
-                @media (max-width: $xl) {
-                    transform: translateX(calc(-167em));
-                }
-
-                @media (max-width: $lg) {
-                    transform: translateX(calc(-180em));
-                }
-            }
-
-            .beam-text {
-                position: absolute;
-                color: var(--backgroundColor);
-                display: inline-block;
-                white-space: nowrap;
-                @media (max-width: $lg) {
-                    left: calc(-0.5vh - 100pt);
-                }
+            &:hover {
+                transform: scale(1.1);
             }
         }
     }
 
-    .project-info-row {
-        padding-top: 10vh;
-
+    .footer {
+        font-family: 'Montserrat', sans-serif;
         p {
-            position: relative;
-            z-index: -1;
+            font-size: 20px;
         }
-      }
-}
-
-#team {
-    img {
-        display: flex;
-        margin: auto;
-        max-width: 50vw;
-        padding-bottom: 2vh;
-        filter: drop-shadow(4pt 4pt 0em var(--keyColor))
-        drop-shadow(4pt -4pt 0em var(--keyColor))
-        drop-shadow(-4pt -4pt 0em var(--keyColor))
-        drop-shadow(-4pt 4pt 0em var(--keyColor)
-        );
-    }
-
-    h1 {
-        font-weight: 100;
-        text-transform: none;
-        font-size: large;
-        letter-spacing: 0;
-
-        b {
-            color: white;
-            background-color: transparent;
-            text-transform: uppercase;
-            font-weight: 700;
-          }
     }
 }
