@@ -17,7 +17,7 @@ $xxl: 1400px;
     }
 
     p {
-        font-size: 25px;
+        font-size: 2.5vh;
 
         b {
             font-weight: 700;
@@ -40,7 +40,12 @@ $xxl: 1400px;
 
     h1 {
         font-style: italic;
-        font-size: 70px;
+        font-size: 6vh;
+    }
+
+    h5 {
+        font-style: italic;
+        font-size: 1.8vh;
     }
 
     .hover-spin {
@@ -84,6 +89,10 @@ $xxl: 1400px;
             display: inline-block;
             transition: all 0.2s var(--bezier);
 
+            img {
+                width: 5vh;
+            }
+
             &:hover {
                 transform: scale(1.1);
             }
@@ -93,7 +102,7 @@ $xxl: 1400px;
     .footer {
         font-family: 'Montserrat', sans-serif;
         p {
-            font-size: 20px;
+            font-size: 2vh;
         }
     }
 }

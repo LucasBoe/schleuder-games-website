@@ -9,7 +9,7 @@
   background-color: var(--backgroundColor);
 }
 :root p {
-  font-size: 25px;
+  font-size: 2.5vh;
 }
 :root p b {
   font-weight: 700;
@@ -27,7 +27,11 @@
 }
 :root h1 {
   font-style: italic;
-  font-size: 70px;
+  font-size: 6vh;
+}
+:root h5 {
+  font-style: italic;
+  font-size: 1.8vh;
 }
 :root .hover-spin {
   transform: rotate(0) scale(1);
@@ -62,6 +66,9 @@
   display: inline-block;
   transition: all 0.2s var(--bezier);
 }
+:root .socials a img {
+  width: 5vh;
+}
 :root .socials a:hover {
   transform: scale(1.1);
 }
@@ -69,5 +76,5 @@
   font-family: "Montserrat", sans-serif;
 }
 :root .footer p {
-  font-size: 20px;
+  font-size: 2vh;
 }/*# sourceMappingURL=style.css.map */
