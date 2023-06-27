@@ -66,9 +66,47 @@ $xxl: 1400px;
         width: 80%;
     }
 
+    .hoverableText {
+        .animatedText {
+            transform: translateY(0) rotate(0);
+            transition: all 0.2s ease-in-out;
+            display: inline-flex;
+            animation-name: letterHover;
+            animation-duration: 0s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            animation-direction: alternate;
+
+            &.a {
+                animation-delay: 0.33s;
+            }
+
+            &.b {
+                animation-delay: 0.66s;
+            }
+
+            &.c {
+                animation-delay: 1s;
+            }
+            
+            &.d {
+                animation-delay: 1.33s;
+            }
+        }
+        &:hover {
+            .animatedText {
+                animation-duration: 0.8s;
+            }
+        }
+    }
+
+    @keyframes letterHover {
+        0%   {transform: translateY(0) rotate(0);}
+        100%   {transform: translateY(-0.5vh) rotate(-12deg);}
+    }
+
     .divider {
         height: 2vh;
-
         &::before, &::after {
             content: "";
             height: 2px;
