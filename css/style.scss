@@ -44,7 +44,7 @@ $xxl: 1400px;
     }
 
     h5 {
-        font-style: italic;
+        font-style: normal;
         font-size: 1.8vh;
     }
 
@@ -63,7 +63,7 @@ $xxl: 1400px;
     }
 
     #logo {
-        width: 80%;
+        width: 100%;
     }
 
     .hoverableText {
@@ -76,6 +76,8 @@ $xxl: 1400px;
             animation-iteration-count: infinite;
             animation-timing-function: ease-in-out;
             animation-direction: alternate;
+            letter-spacing: -3pt;
+            word-spacing: 3pt;
 
             &.a {
                 animation-delay: 0.33s;
@@ -102,11 +104,10 @@ $xxl: 1400px;
 
     @keyframes letterHover {
         0%   {transform: translateY(0) rotate(0);}
-        100%   {transform: translateY(-0.5vh) rotate(-12deg);}
+        100%   {transform: translateY(-0.5vh) rotate(360deg);}
     }
 
     .divider {
-        height: 2vh;
         &::before, &::after {
             content: "";
             height: 2px;
@@ -118,6 +119,13 @@ $xxl: 1400px;
         img {
             height: 100%;
             padding-top: 0.5vh;
+        }
+
+        i {
+            font-style: normal;
+            font-size: 4vh;
+            display: inline-block;
+            transform: translateY(1vh);
         }
     }
 

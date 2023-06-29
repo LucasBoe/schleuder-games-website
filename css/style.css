@@ -30,7 +30,7 @@
   font-size: 6vh;
 }
 :root h5 {
-  font-style: italic;
+  font-style: normal;
   font-size: 1.8vh;
 }
 :root .hover-spin {
@@ -45,61 +45,42 @@
   width: 50vh;
 }
 :root #logo {
-  width: 80%;
+  width: 100%;
 }
 :root .hoverableText .animatedText {
   transform: translateY(0) rotate(0);
   transition: all 0.2s ease-in-out;
   display: inline-flex;
-  -webkit-animation-name: letterHover;
-          animation-name: letterHover;
-  -webkit-animation-duration: 0s;
-          animation-duration: 0s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
-  -webkit-animation-direction: alternate;
-          animation-direction: alternate;
+  animation-name: letterHover;
+  animation-duration: 0s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+  letter-spacing: -3pt;
+  word-spacing: 3pt;
 }
 :root .hoverableText .animatedText.a {
-  -webkit-animation-delay: 0.33s;
-          animation-delay: 0.33s;
+  animation-delay: 0.33s;
 }
 :root .hoverableText .animatedText.b {
-  -webkit-animation-delay: 0.66s;
-          animation-delay: 0.66s;
+  animation-delay: 0.66s;
 }
 :root .hoverableText .animatedText.c {
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
+  animation-delay: 1s;
 }
 :root .hoverableText .animatedText.d {
-  -webkit-animation-delay: 1.33s;
-          animation-delay: 1.33s;
+  animation-delay: 1.33s;
 }
 :root .hoverableText:hover .animatedText {
-  -webkit-animation-duration: 0.8s;
-          animation-duration: 0.8s;
-}
-@-webkit-keyframes letterHover {
-  0% {
-    transform: translateY(0) rotate(0);
-  }
-  100% {
-    transform: translateY(-0.5vh) rotate(-12deg);
-  }
+  animation-duration: 0.8s;
 }
 @keyframes letterHover {
   0% {
     transform: translateY(0) rotate(0);
   }
   100% {
-    transform: translateY(-0.5vh) rotate(-12deg);
+    transform: translateY(-0.5vh) rotate(360deg);
   }
-}
-:root .divider {
-  height: 2vh;
 }
 :root .divider::before, :root .divider::after {
   content: "";
@@ -111,6 +92,12 @@
 :root .divider img {
   height: 100%;
   padding-top: 0.5vh;
+}
+:root .divider i {
+  font-style: normal;
+  font-size: 4vh;
+  display: inline-block;
+  transform: translateY(1vh);
 }
 :root .socials a {
   padding: 0 0.5vh;
