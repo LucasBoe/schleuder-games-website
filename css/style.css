@@ -1,11 +1,12 @@
 :root {
-  --backgroundColor: #FFF700;
+  --backgroundColor: #1abc94;
+  --textColor: white;
   --bezier: cubic-bezier(.5,-.75,.7,2);
 }
 :root body {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Exo", sans-serif;
   font-weight: 300;
-  color: black;
+  color: var(--textColor);
   background-color: var(--backgroundColor);
 }
 :root p {
@@ -16,13 +17,12 @@
 }
 :root a {
   text-decoration: none;
-  color: black;
+  color: var(--textColor);
 }
 :root a:hover {
   text-decoration: underline;
 }
 :root h1, :root h2, :root h3, :root h4, :root h5, :root h6 {
-  font-family: "Montserrat", sans-serif;
   font-weight: 900;
 }
 :root h1 {
@@ -45,7 +45,7 @@
   width: 50vh;
 }
 :root #logo {
-  width: 100%;
+  width: 50%;
 }
 :root .hoverableText .animatedText {
   transform: translateY(0) rotate(0);
@@ -87,7 +87,7 @@
   height: 2px;
   width: 10vh;
   display: inline-block;
-  background-color: black;
+  background-color: var(--textColor);
 }
 :root .divider img {
   height: 100%;
@@ -109,9 +109,6 @@
 }
 :root .socials a:hover {
   transform: scale(1.1);
-}
-:root .footer {
-  font-family: "Montserrat", sans-serif;
 }
 :root .footer p {
   font-size: 2vh;

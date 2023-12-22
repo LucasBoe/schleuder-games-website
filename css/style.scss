@@ -6,13 +6,14 @@ $xl: 1200px;
 $xxl: 1400px;
 
 :root {
-    --backgroundColor: #FFF700;
+    --backgroundColor: #1abc94;
+    --textColor: white;
     --bezier: cubic-bezier(.5,-.75,.7,2);
 
     body {
-        font-family: 'Source Sans Pro', sans-serif;
+        font-family: 'Exo', sans-serif;
         font-weight: 300;
-        color: black;
+        color: var(--textColor);
         background-color: var(--backgroundColor);
     }
 
@@ -26,7 +27,7 @@ $xxl: 1400px;
 
     a {
         text-decoration: none;
-        color: black;
+        color: var(--textColor);
 
         &:hover {
             text-decoration:underline;
@@ -34,7 +35,6 @@ $xxl: 1400px;
     }
     
     h1, h2, h3, h4, h5, h6 {
-        font-family: 'Montserrat', sans-serif;
         font-weight: 900;
     }
 
@@ -63,7 +63,7 @@ $xxl: 1400px;
     }
 
     #logo {
-        width: 100%;
+        width: 50%;
     }
 
     .hoverableText {
@@ -113,7 +113,7 @@ $xxl: 1400px;
             height: 2px;
             width: 10vh;
             display: inline-block;
-            background-color: black;
+            background-color: var(--textColor);
         }
 
         img {
@@ -146,7 +146,6 @@ $xxl: 1400px;
     }
 
     .footer {
-        font-family: 'Montserrat', sans-serif;
         p {
             font-size: 2vh;
         }
