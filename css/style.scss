@@ -7,8 +7,34 @@ $xxl: 1400px;
 
 :root {
     --backgroundColor: #1abc94;
+    --highlightColor: pink;
     --textColor: white;
     --bezier: cubic-bezier(.5,-.75,.7,2);
+
+    .background {
+        position: absolute;
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
+        ul {
+            position: fixed;
+            display: flex;
+            flex-wrap: wrap;
+            transform: rotate(-2deg);
+            $tileSize : 20vh;
+            left: calc(-1 *  $tileSize);
+            top: calc(-1 * $tileSize);
+            width: calc(100% + $tileSize + $tileSize);
+            height: calc(100% + $tileSize + $tileSize);
+            li {
+                background-image: url(../img/pattern.png);
+                width: $tileSize;
+                height: $tileSize;
+                background-size: contain;
+                list-style: none;
+            }
+        }
+    }
 
     body {
         font-family: 'Exo', sans-serif;
@@ -48,86 +74,33 @@ $xxl: 1400px;
         font-size: 1.8vh;
     }
 
-    .hover-spin {
-        transform: rotate(0) scale(1);
-        display: inline-flex;
-        transition: all 0.2s var(--bezier);
-
-        &:hover {
-            transform: rotate(8deg) scale(1.1);
-        }
+    section {
+        height: 100vh;
     }
 
-    .container {
-        width: 50vh;
+    .nav {
+        right: 0;
+        margin: 2%;
+        background-color: var(--backgroundColor);
+        li {
+            display: inline-block; 
+            &.active {
+                    ::before {
+                        content: " ";
+                        background-color: var(--highlightColor);
+                        position: absolute;
+                        width: 100%;
+                        height: 50%;
+                        top: 50%;
+                        left: 0;
+                        z-index: -10;
+                    }
+            }  
+        }
+        
     }
 
-    #logo {
-        width: 50%;
-    }
-
-    .hoverableText {
-        .animatedText {
-            transform: translateY(0) rotate(0);
-            transition: all 0.2s ease-in-out;
-            display: inline-flex;
-            animation-name: letterHover;
-            animation-duration: 0s;
-            animation-iteration-count: infinite;
-            animation-timing-function: ease-in-out;
-            animation-direction: alternate;
-            letter-spacing: -3pt;
-            word-spacing: 3pt;
-
-            &.a {
-                animation-delay: 0.33s;
-            }
-
-            &.b {
-                animation-delay: 0.66s;
-            }
-
-            &.c {
-                animation-delay: 1s;
-            }
-            
-            &.d {
-                animation-delay: 1.33s;
-            }
-        }
-        &:hover {
-            .animatedText {
-                animation-duration: 0.8s;
-            }
-        }
-    }
-
-    @keyframes letterHover {
-        0%   {transform: translateY(0) rotate(0);}
-        100%   {transform: translateY(-0.5vh) rotate(360deg);}
-    }
-
-    .divider {
-        &::before, &::after {
-            content: "";
-            height: 2px;
-            width: 10vh;
-            display: inline-block;
-            background-color: var(--textColor);
-        }
-
-        img {
-            height: 100%;
-            padding-top: 0.5vh;
-        }
-
-        i {
-            font-style: normal;
-            font-size: 4vh;
-            display: inline-block;
-            transform: translateY(1vh);
-        }
-    }
+  
 
     .socials {
         a {
@@ -142,12 +115,6 @@ $xxl: 1400px;
             &:hover {
                 transform: scale(1.1);
             }
-        }
-    }
-
-    .footer {
-        p {
-            font-size: 2vh;
         }
     }
 }
