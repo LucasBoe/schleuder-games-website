@@ -6,10 +6,18 @@ $xl: 1200px;
 $xxl: 1400px;
 
 :root {
+    
     --backgroundColor: #1abc94;
-    --highlightColor: pink;
+    --highlightColor: #ff00ff;
+    --backdropColor: black;
+    --headlineColor: #FF00D5;
     --textColor: white;
     --bezier: cubic-bezier(.5,-.75,.7,2);
+
+    $unit: calc(0.5vh + 0.5vw);
+
+    $font-size: calc($unit * 1.5);
+    $font-size-small: calc($unit * 1.25);
 
     .background {
         position: absolute;
@@ -44,8 +52,7 @@ $xxl: 1400px;
     }
 
     p {
-        font-size: 2.5vh;
-
+        font-size: $font-size;
         b {
             font-weight: 700;
         }
@@ -64,9 +71,9 @@ $xxl: 1400px;
         font-weight: 900;
     }
 
-    h1 {
-        font-style: italic;
-        font-size: 6vh;
+    h1, h2 {
+        color: var(--headlineColor);
+        text-transform: uppercase;
     }
 
     h5 {
@@ -74,47 +81,203 @@ $xxl: 1400px;
         font-size: 1.8vh;
     }
 
-    section {
-        height: 100vh;
-    }
+    .content {
+        position: relative;
+        width: 70vw;
+        margin-left: 15vw;
 
-    .nav {
-        right: 0;
-        margin: 2%;
-        background-color: var(--backgroundColor);
-        li {
-            display: inline-block; 
-            &.active {
-                    ::before {
-                        content: " ";
-                        background-color: var(--highlightColor);
-                        position: absolute;
-                        width: 100%;
-                        height: 50%;
-                        top: 50%;
-                        left: 0;
-                        z-index: -10;
-                    }
-            }  
+        .wrap {
+            padding: 6vh 25vh;
         }
+
+        .backdrop {
+            background-color: var(--backdropColor);
+            margin-top: 4vh;
+
+            &.edge-cutoff {
+                $path: polygon(0 7vw, 100% 0%, 100% 100%, 0% 100%);
+                -webkit-clip-path: $path;
+                clip-path: $path;
+            }
+
+            &.end-cutoff {
+                height: 4vh;
+                margin-top: 0;
+                margin-bottom: 4vh;
+                $path: polygon(0 0, 100% 0%, 0% 100%);
+                -webkit-clip-path: $path;
+                clip-path: $path;
+            }
+        }
+
+        #start {
+            padding-top: 20vh;
+            p {
+                padding-top: 2vw;
+            }
+
+            .divider {
+                border-top: white 1px solid;
+                height: 16pt;
+                overflow: visible;
+                display: flex;
+                align-items: end;
+                justify-content: center;
+                margin-top: 8vh;
+                p {
+                    background-color: var(--backdropColor);
+                    padding: 0 12pt;
+                }
+            }
+            .socials {
+                display: flex;
+                justify-content: center;
+                a {
+                    padding: 0 0.5vh;
+                    display: inline-block;
+                    transition: all 0.2s var(--bezier);
         
-    }
-
-  
-
-    .socials {
-        a {
-            padding: 0 0.5vh;
-            display: inline-block;
-            transition: all 0.2s var(--bezier);
-
-            img {
-                width: 5vh;
-            }
-
-            &:hover {
-                transform: scale(1.1);
+                    img {
+                        width: 5vh;
+                    }
+        
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
             }
         }
+
+        #spaceSprouts {
+            img {
+                width: 100%;
+            }
+
+            ul {
+                padding-top: 3vh;
+                li {
+                    list-style: none;
+                    font-size: 2.5vh;
+
+                    img {
+                        width: auto;
+                    }
+                }
+            }
+
+            .linkouts {
+                .item {
+                    display: inline;
+                    img {
+                        width: auto;
+                    }
+                    font-size: $font-size;
+
+                    :first-child {
+                        padding-right: 2vh;
+                    }
+                    
+
+                &.special img {
+                    width: 100%;
+                }
+                }
+            }
+        }
+
+        #team {
+            .row {
+                padding-bottom: 20px;
+                img {
+                    max-height: 20vh;
+                    border-radius: 100%;
+                    width: auto;
+                }
+
+                h1 {
+                    color: var(--textColor);
+                }
+
+                h2 {
+                    color: var(--textColor);
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+
+    .overlay {
+        z-index: 10;
+    }
+
+    #logo {
+        width: 10vw;
+        background-color: black;
+        padding: 2vw 1vw 1vw;
+        left: 3vw;
+        top: 0;
+        img {
+            width: 100%;
+        }
+    }
+
+
+    .footer {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        background-color: var(--backdropColor);
+        font-size: $font-size-small;
+        margin: 2vh;
+        padding: 1vh 2vh;
+        z-index: 10;
+    }
+
+        .nav {
+            right: 0;
+            margin: 2%;
+            background-color: var(--backgroundColor);
+            padding: 0.35% 1%;
+            li {
+                display: inline-block; 
+                ::before {
+                    content: " ";
+                    background-color: var(--highlightColor);
+                    position: absolute;
+                    width: 100%;
+                    height: 0%;
+                    top: 110%;
+                    left: 0;
+                    z-index: -10;
+                    transform: rotate(-2deg);
+                    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                }
+
+                &.active {
+                        ::before {
+                            height: 50%;
+                            top: 50%;
+                    transform: rotate(0deg);
+                        }
+                }
+
+                &:hover {
+                    ::before {
+                        height: 100%;
+                        top: 0;
+                        transform: rotate(2deg);
+                    }
+                }
+                a {
+                    font-size: medium;
+                    padding: 2% 1vh;
+                    font-weight: 700;
+                    color: var(--backdropColor);
+                    text-transform: uppercase;
+                    &:hover {
+                        background-color: transparent;
+                    }
+                }
+            }
     }
 }

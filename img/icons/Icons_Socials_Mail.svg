@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="65" height="65" viewBox="0 0 65 65">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rechteck_45" data-name="Rechteck 45" width="41" height="28" transform="translate(-0.425 0.427)" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Icons_Socials_Mail" transform="translate(0.135 0.139)">
+    <circle id="Ellipse_11" data-name="Ellipse 11" cx="32.5" cy="32.5" r="32.5" transform="translate(-0.135 -0.139)" fill="#fff"/>
+    <g id="Gruppe_275" data-name="Gruppe 275" transform="translate(12.29 18.434)">
+      <g id="Gruppe_270" data-name="Gruppe 270" transform="translate(0 0)" clip-path="url(#clip-path)">
+        <path id="Pfad_1517" data-name="Pfad 1517" d="M39.1,6a1.564,1.564,0,0,0-1.564,1.564V20.075a1.564,1.564,0,0,1-1.564,1.564H4.692a1.564,1.564,0,0,1-1.564-1.564V7.564A1.564,1.564,0,1,0,0,7.564V20.075a4.7,4.7,0,0,0,4.692,4.692H35.969a4.7,4.7,0,0,0,4.692-4.692V7.564A1.564,1.564,0,0,0,39.1,6" transform="translate(-0.069 3.511)"/>
+        <path id="Pfad_1518" data-name="Pfad 1518" d="M19.283,18.453a1.562,1.562,0,0,0,1.877,0L39.629,4.6A1.564,1.564,0,0,0,40.1,2.674a4.774,4.774,0,0,0-.923-1.3A4.693,4.693,0,0,0,35.86,0H4.583A4.693,4.693,0,0,0,1.268,1.376a4.774,4.774,0,0,0-.923,1.3A1.564,1.564,0,0,0,.814,4.6ZM4.583,3.128H35.86a1.371,1.371,0,0,1,.438,0L20.222,15.248,4.145,3.128a1.371,1.371,0,0,1,.438,0" transform="translate(0.04 0.128)"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="65" height="65" viewBox="0 0 65 65">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rechteck_43" data-name="Rechteck 43" width="36.208" height="36.208" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Icon_Socials_Insta" transform="translate(0 0.139)">
+    <circle id="Ellipse_10" data-name="Ellipse 10" cx="32.5" cy="32.5" r="32.5" transform="translate(0 -0.139)" fill="#fff"/>
+    <g id="Gruppe_273" data-name="Gruppe 273" transform="translate(14.178 14.475)">
+      <g id="Gruppe_266" data-name="Gruppe 266" transform="translate(0 0)" clip-path="url(#clip-path)">
+        <path id="Pfad_1511" data-name="Pfad 1511" d="M21.344,11.9a9.344,9.344,0,1,0,9.344,9.344A9.362,9.362,0,0,0,21.344,11.9m0,15.33a5.986,5.986,0,1,1,5.986-5.986,6.013,6.013,0,0,1-5.986,5.986" transform="translate(-3.24 -3.213)"/>
+        <path id="Pfad_1512" data-name="Pfad 1512" d="M37.317,8.7A2.117,2.117,0,1,1,35.2,10.817,2.117,2.117,0,0,1,37.317,8.7" transform="translate(-9.504 -2.349)"/>
+        <path id="Pfad_1513" data-name="Pfad 1513" d="M33.288,2.993A10.4,10.4,0,0,0,25.623,0H10.585C4.234,0,0,4.234,0,10.585V25.55a10.5,10.5,0,0,0,3.066,7.811,10.653,10.653,0,0,0,7.592,2.847H25.55a10.779,10.779,0,0,0,7.665-2.847,10.451,10.451,0,0,0,2.993-7.738V10.585a10.465,10.465,0,0,0-2.92-7.592M33,25.623a7.133,7.133,0,0,1-2.117,5.329,7.546,7.546,0,0,1-5.329,1.9H10.658a7.546,7.546,0,0,1-5.329-1.9,7.338,7.338,0,0,1-1.971-5.4V10.585A7.278,7.278,0,0,1,5.329,5.256a7.423,7.423,0,0,1,5.329-1.9H25.7a7.278,7.278,0,0,1,5.329,1.971A7.533,7.533,0,0,1,33,10.585Z" transform="translate(0 0)"/>
+      </g>
+    </g>
+  </g>
+</svg>

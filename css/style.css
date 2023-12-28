@@ -1,6 +1,8 @@
 :root {
   --backgroundColor: #1abc94;
-  --highlightColor: pink;
+  --highlightColor: #ff00ff;
+  --backdropColor: black;
+  --headlineColor: #FF00D5;
   --textColor: white;
   --bezier: cubic-bezier(.5,-.75,.7,2);
 }
@@ -34,7 +36,7 @@
   background-color: var(--backgroundColor);
 }
 :root p {
-  font-size: 2.5vh;
+  font-size: calc((0.5vh + 0.5vw) * 1.5);
 }
 :root p b {
   font-weight: 700;
@@ -49,43 +51,173 @@
 :root h1, :root h2, :root h3, :root h4, :root h5, :root h6 {
   font-weight: 900;
 }
-:root h1 {
-  font-style: italic;
-  font-size: 6vh;
+:root h1, :root h2 {
+  color: var(--headlineColor);
+  text-transform: uppercase;
 }
 :root h5 {
   font-style: normal;
   font-size: 1.8vh;
 }
-:root section {
-  height: 100vh;
+:root .content {
+  position: relative;
+  width: 70vw;
+  margin-left: 15vw;
+}
+:root .content .wrap {
+  padding: 6vh 25vh;
+}
+:root .content .backdrop {
+  background-color: var(--backdropColor);
+  margin-top: 4vh;
+}
+:root .content .backdrop.edge-cutoff {
+  -webkit-clip-path: polygon(0 7vw, 100% 0%, 100% 100%, 0% 100%);
+  clip-path: polygon(0 7vw, 100% 0%, 100% 100%, 0% 100%);
+}
+:root .content .backdrop.end-cutoff {
+  height: 4vh;
+  margin-top: 0;
+  margin-bottom: 4vh;
+  -webkit-clip-path: polygon(0 0, 100% 0%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0%, 0% 100%);
+}
+:root .content #start {
+  padding-top: 20vh;
+}
+:root .content #start p {
+  padding-top: 2vw;
+}
+:root .content #start .divider {
+  border-top: white 1px solid;
+  height: 16pt;
+  overflow: visible;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  margin-top: 8vh;
+}
+:root .content #start .divider p {
+  background-color: var(--backdropColor);
+  padding: 0 12pt;
+}
+:root .content #start .socials {
+  display: flex;
+  justify-content: center;
+}
+:root .content #start .socials a {
+  padding: 0 0.5vh;
+  display: inline-block;
+  transition: all 0.2s var(--bezier);
+}
+:root .content #start .socials a img {
+  width: 5vh;
+}
+:root .content #start .socials a:hover {
+  transform: scale(1.1);
+}
+:root .content #spaceSprouts img {
+  width: 100%;
+}
+:root .content #spaceSprouts ul {
+  padding-top: 3vh;
+}
+:root .content #spaceSprouts ul li {
+  list-style: none;
+  font-size: 2.5vh;
+}
+:root .content #spaceSprouts ul li img {
+  width: auto;
+}
+:root .content #spaceSprouts .linkouts .item {
+  display: inline;
+  font-size: calc((0.5vh + 0.5vw) * 1.5);
+}
+:root .content #spaceSprouts .linkouts .item img {
+  width: auto;
+}
+:root .content #spaceSprouts .linkouts .item :first-child {
+  padding-right: 2vh;
+}
+:root .content #spaceSprouts .linkouts .item.special img {
+  width: 100%;
+}
+:root .content #team .row {
+  padding-bottom: 20px;
+}
+:root .content #team .row img {
+  max-height: 20vh;
+  border-radius: 100%;
+  width: auto;
+}
+:root .content #team .row h1 {
+  color: var(--textColor);
+}
+:root .content #team .row h2 {
+  color: var(--textColor);
+  font-weight: 300;
+}
+:root .overlay {
+  z-index: 10;
+}
+:root #logo {
+  width: 10vw;
+  background-color: black;
+  padding: 2vw 1vw 1vw;
+  left: 3vw;
+  top: 0;
+}
+:root #logo img {
+  width: 100%;
+}
+:root .footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  background-color: var(--backdropColor);
+  font-size: calc((0.5vh + 0.5vw) * 1.25);
+  margin: 2vh;
+  padding: 1vh 2vh;
+  z-index: 10;
 }
 :root .nav {
   right: 0;
   margin: 2%;
   background-color: var(--backgroundColor);
+  padding: 0.35% 1%;
 }
 :root .nav li {
   display: inline-block;
 }
-:root .nav li.active ::before {
+:root .nav li ::before {
   content: " ";
   background-color: var(--highlightColor);
   position: absolute;
   width: 100%;
-  height: 50%;
-  top: 50%;
+  height: 0%;
+  top: 110%;
   left: 0;
   z-index: -10;
+  transform: rotate(-2deg);
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-:root .socials a {
-  padding: 0 0.5vh;
-  display: inline-block;
-  transition: all 0.2s var(--bezier);
+:root .nav li.active ::before {
+  height: 50%;
+  top: 50%;
+  transform: rotate(0deg);
 }
-:root .socials a img {
-  width: 5vh;
+:root .nav li:hover ::before {
+  height: 100%;
+  top: 0;
+  transform: rotate(2deg);
 }
-:root .socials a:hover {
-  transform: scale(1.1);
+:root .nav li a {
+  font-size: medium;
+  padding: 2% 1vh;
+  font-weight: 700;
+  color: var(--backdropColor);
+  text-transform: uppercase;
+}
+:root .nav li a:hover {
+  background-color: transparent;
 }/*# sourceMappingURL=style.css.map */

@@ -2,18 +2,19 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CodePen - Quick Bootstrap ScrollSpy Demo</title>
   <link rel='stylesheet' href='//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
-<link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'><link rel="stylesheet" href="./css/style.css">
-
+  <link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/helpers.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,300;0,900;1,900&display=swap" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Share+Tech&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,300;0,900;1,900&display=swap" rel="stylesheet">
-<link href='https://fonts.googleapis.com/css?family=Share+Tech&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 <div class="background">
   <ul>
     <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
@@ -22,49 +23,157 @@
 <body data-spy="scroll" data-target="#nav">
 <div class="container-fluid">
   <div class="row align-items-end">
+    <div id="logo" class="affix overlay">
+      <img src="img/Schleuder_Games_LOGO_RZ.png">
+    </div>
     <div id="nav">
-      <ul class="nav affix">
-        <li><a href="#one">N&deg;1</a></li>
-        <li><a href="#two">N&deg;2</a></li>
-        <li><a href="#three">N&deg;3</a></li>
+      <ul class="nav affix overlay">
+        <li class="active"><a href="#start">Ahoi</a></li>
+        <li><a href="#spaceSprouts">Space Sprouts</a></li>
+        <li><a href="#team">Team</a></li>
       </ul>
     </div>
   </div>
+      <a class="footer">
+        IMPRESSUM - SCHLEUDER GAMES C 2023
+      </a>
 </div>
-<div class="container">
-  <div class="row">
-    <div class="col-md-offset-3 col-md-9 content">
-      <div id="start" class="h1-wrap">
-      <h1 class="shareTech opacity">Scroll Spy Vertical Height Demo</h1>
-        <div class="puppyWrap"><div class="puppyCover opacity"></div>
-       <img class="topImage" src="http://www.drawing-factory.com/image-files/how-to-draw-a-puppy-labrador11.jpg" />
+<div class="content pt-75">
+  <div class="backdrop edge-cutoff">
+    <div>
+      <div id="start" class="wrap">
+      <h1 class="shareTech opacity">Ahoi & Hello!</h1>
+      <p>We are <b>SCHLEUDER GAMES</b>, a indie game studio from Berlin & Brandenburg, founded in 2022.
+        We are currently developing our first game <b>SPACE SPROUTS</b>, a sandbox-y 2D scifi game.</p>
+        <div class="divider">
+          <p>
+            Want to get into contact?
+          </p>
+        </div>
+        <div class="socials">
+          <a href="https://twitter.com/schleudergames" target="_blank" rel="noopener">
+            <img src="img/icons/Icon_Socials_Twitter.svg">
+          </a>
+          
+          <a href="https://www.instagram.com/schleudergames/" target="_blank" rel="noopener">
+              <img src="img/icons/Icon_Socials_Instagram.svg">
+          </a>
+          <!--
+          <a href="https://www.tiktok.com/@wearecoolcorpse" target="_blank" rel="noopener">
+              <img src="img/icons/Icon_Socials_Tiktok.svg">
+          </a>
+          -->
         </div>
       </div>
-      <section id="one">
-        <h2 class="shareTech">Section 1</h2>
-             <p>
-               Scroll spy is very fun but pretty tricky when it's activated by id's with elements of varying heights.
-             </p>
-      </section>
-      <section id="two">
-        <h2 class="shareTech">Section 2</h2>
-         <p>
-           <strong>Note:</strong> If the nav list is of a certain height and is the trigger element well - you could run into problems when consider spy activation.
-             </p>
-      </section>
-      <section id="three">
-        <h2 class="shareTech">Section 3</h2>
-         <p>
-               If you're rendering trigger id elements dynamically it's best to make sure that you're setting the height of the element as well; particularly if the element height is small. 
-             </p>
-      </section>
-      <sub>Disclaimer: this is mainly an issue for desktop viewing so this example will not depercate nicely. You're welcome. ;) The background image is from <a href="http://www.drawing-factory.com/">The Drawing Factory</a>.</sub>
     </div>
+  </div>
+  <div class="backdrop">
+    <div>
+      <section id="spaceSprouts">
+        <div>
+          <img src="img/space-sprouts-concept.png">
+          <div class="wrap">
+            <h2>What is Space Sprouts?</h2>
+            <ul>
+              <li>
+                  <img src="img/icons/Emoji_Rocket.svg">a <b>2D physical sandbox</b> game in a spaceship.
+              </li>             
+              <li>
+                  <img src="img/icons/Emoji_Eye.svg">a <b>short form narrative</b> experience.
+              </li>             
+              <li>
+                  <img src="img/icons/Emoji_Plant.svg">a <b>love letter to solar punk</b> and weird scifi.
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <img src="img/icons/Emoji_Hourglass.svg">more details coming soon.
+              </li>             
+            </ul>
+            <div class="linkouts container-fluid pt-25">
+              <div class="row">
+                <div class="col col-md-4">
+                <a href="link" class="item regular">
+                  <img src="img/icons/Icon_Socials_Discord.svg">Join our Discord
+                </a>
+              </div>
+              <div class="col col-md-4">
+                <a href="link" class="item regular">
+                  <img src="img/icons/Icon_Steam.svg">Coming to Steam
+                </a>
+              </div>
+              <div class="col col-md-4">
+                <div class="item special">
+                  Funded by
+                  <img src="img/Logo_Medienboard@2x.png">
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <div class="backdrop">
+    <div>
+      <section id="team">
+        <div class="wrap container-fluid">
+          <div class="row">
+            <div class="col">
+              <h2>THE SCHLEUDER GÄNG</h2>
+              <p>The studio was founded in 2022 by three random humans sharing a last name starting with B.</p>
+              <p>We are currently a team of 4 people:</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-auto">
+              <img src="img/lucas.JPG">
+            </div>
+            <div class="col details">
+              <h1>Lucas Bödeker</h1>
+              <h2>GAME DESIGNER & FOUNDER</h2>
+              <p>Lucas is our Lead Game Designer and all around master. He likes trains, dogs and Age of Empires.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-auto">
+              <img src="img/lucas.JPG">
+            </div>
+            <div class="col details">
+              <h1>TORBEN BÖKEMEYER</h1>
+              <h2>ARTIST & FOUNDER</h2>
+              <p>Torben is the person for everything visual and clicking buttons. Drawing spaceships is his happy place.</p>
+            </div>
+          </div>          <div class="row">
+            <div class="col-auto">
+              <img src="img/lucas.JPG">
+            </div>
+            <div class="col details">
+              <h1>MAX BREDLAU</h1>
+              <h2>LEVEL DESIGNER & FOUNDER</h2>
+              <p>Max takes care of our community. He is also a mighty crusader knight in his free time.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-auto">
+              <img src="img/lucas.JPG">
+            </div>
+            <div class="col details">
+              <h1>CAROLINE PETER</h1>
+              <h2>GAME DESIGN INTERN</h2>
+              <p>Caro is our game design support and level designer. She really wants to believe since she was little.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <div class="backdrop end-cutoff">
   </div>
 </div>
 </body>
-<!-- partial -->
-  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
 <script src='//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js'></script>
 <script src='js/backgroundAnimator.js'></script>
