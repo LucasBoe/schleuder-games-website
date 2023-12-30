@@ -16,7 +16,7 @@ $xxl: 1400px;
 
     $unit: calc(0.5vh + 0.5vw);
 
-    $font-size: calc($unit * 1.5);
+    $font-size: 12pt;
     $font-size-small: calc($unit * 1.25);
 
     .background {
@@ -83,11 +83,17 @@ $xxl: 1400px;
 
     .content {
         position: relative;
-        width: 70vw;
-        margin-left: 15vw;
+        @media (min-width: $sm) {
+
+            width: 70vw;
+            margin-left: 15vw;
+        }
 
         .wrap {
-            padding: 6vh 25vh;
+            padding: 4vh 6vw;
+            @media (min-width: $sm) {
+            padding: 6vw 12vw;
+            }
         }
 
         .backdrop {
@@ -157,7 +163,7 @@ $xxl: 1400px;
                 padding-top: 3vh;
                 li {
                     list-style: none;
-                    font-size: 2.5vh;
+                    font-size: $font-size;
 
                     img {
                         width: auto;
@@ -166,21 +172,41 @@ $xxl: 1400px;
             }
 
             .linkouts {
-                .item {
-                    display: inline;
-                    img {
-                        width: auto;
-                    }
-                    font-size: $font-size;
+                .row {
+                    display: block;
+                    padding: calc($unit * 4);
 
-                    :first-child {
-                        padding-right: 2vh;
+                    @media (min-width: $sm) {
+                        display: inherit;
+                        padding: 0;
                     }
-                    
 
-                &.special img {
-                    width: 100%;
-                }
+                    .col {
+                        width: 100%;
+                        padding-top: 1vh;
+
+                        @media (min-width: $sm) {
+                            padding-top: 0;
+                        }
+
+                        .item {
+                            display: inline;
+                            font-size: $font-size;
+
+                            img {
+                                width: auto;
+                                max-width: 50vw;
+                            }
+                            
+                            :first-child {
+                                padding-right: 2vh;
+                            }
+                            
+                            &.special img {
+                                width: 100%;
+                            }
+                        }  
+                    }
                 }
             }
         }
@@ -188,21 +214,44 @@ $xxl: 1400px;
         #team {
             .row {
                 padding-bottom: 20px;
-                img {
-                    max-height: 20vh;
-                    border-radius: 100%;
-                    width: auto;
+                display: block;
+
+
+                @media (min-width: $sm) {
+                    display: flex;
                 }
 
-                h1 {
-                    color: var(--textColor);
-                }
+                    .col-auto {
+                        text-align: center;
+                        @media (min-width: $sm) {
+                            text-align: start;
+                        }
+                    }
 
-                h2 {
-                    color: var(--textColor);
-                    font-weight: 300;
+                    img {
+                        max-height: 20vh;
+                        border-radius: 100%;
+                        width: auto;
+                    }
+                    
+                    .details {  
+                        padding-top: 3vh;
+                        text-align: center;
+                        @media (min-width: $sm) {
+                            text-align: start;
+                        }
+                        
+                        h1 {
+                            color: var(--textColor);
+                        }
+                        
+                        h2 {
+                            color: var(--textColor);
+                            font-weight: 300;
+                        }
+                    }
                 }
-            }
+            
         }
     }
 
