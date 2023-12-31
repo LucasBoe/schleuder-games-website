@@ -7,29 +7,9 @@ $(() => {
         amount = $(this).scrollTop();
         makeOpaqueByScroll(amount);
     });
-
-
-
-
-    $(() => window.addEventListener("onLoadedProjects", () => {
-        $(".scroll-fade").each(function( i ) {
-            $(this).addClass("inActive");
-        });
-    }));
-    
 });
 
-function makeOpaqueByScroll(amount) {
-
-    var ship = $(".ship-row");
-    var off = 200;
-    var raw = amount - ship.offset().top + off;
-    var abs = Math.abs(raw);
-    var sign = Math.sign(raw);
-    var translate = Math.pow(abs * 0.05, 2) * sign;
-    ship.css('transform', 'translateX(' + translate + 'px)');
-
-    
+function makeOpaqueByScroll(amount) {    
     $(".scroll-fade").each(function( i ) {
 
         var att = $(this).attr("off");
@@ -41,17 +21,24 @@ function makeOpaqueByScroll(amount) {
         
         var shouldBevisible = strength < 0;
         
-        if (shouldBevisible && $(this).hasClass("inActive")) {
-            $(this).removeClass("inActive")
+        if (shouldBevisible && !$(this).hasClass("in")) {
+            $(this).addClass("in");
+        } else if (!shouldBevisible && $(this).hasClass("in")) {
+            $(this).removeClass("in");
         }
     });
-    
-    $(".scroll-arrow").each(function( a ) {
-        if (amount > 100)
-            $(this).css('display',  "none" );
-        else
-            $(this).css('display',  "flex" );
-    });
+
+    var logoShouldBeSmall = amount > 100;
+    var logoIsSmall = $("#logo").hasClass("small");
+
+    if (logoIsSmall != logoShouldBeSmall) {
+        if (logoShouldBeSmall)
+        {
+            $("#logo").addClass("small");
+        } else {
+            $("#logo").removeClass("small");
+        }
+    }
 }
 
 // Clamp number between two values with the following line:

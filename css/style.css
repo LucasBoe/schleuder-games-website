@@ -93,11 +93,10 @@
   clip-path: polygon(0 7vw, 100% 0%, 100% 100%, 0% 100%);
 }
 :root .content .backdrop.end-cutoff {
-  height: 4vh;
-  margin-top: 0;
   margin-bottom: 4vh;
-  -webkit-clip-path: polygon(0 0, 100% 0%, 0% 100%);
-  clip-path: polygon(0 0, 100% 0%, 0% 100%);
+  padding-bottom: 4vh;
+  -webkit-clip-path: polygon(0 0, 100% 0%, 100% calc(100% - 4vh), 0 100%);
+  clip-path: polygon(0 0, 100% 0%, 100% calc(100% - 4vh), 0 100%);
 }
 :root .content #start {
   padding-top: 20vh;
@@ -282,6 +281,12 @@
     padding: 2vw 1vw 1vw;
     left: 3vw;
     top: 0;
+    transform-origin: top;
+    transition: transform 0.5s ease;
+    transform: scale(1);
+  }
+  :root .header-wrapper #logo.small {
+    transform: scale(0.67);
   }
 }
 :root .header-wrapper #logo img {
@@ -348,4 +353,13 @@
 }
 :root .header-wrapper #nav .nav li a:hover {
   background-color: transparent;
+}
+:root .scroll-fade {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.5s ease-out;
+}
+:root .scroll-fade.in {
+  opacity: 1;
+  transform: scale(1);
 }/*# sourceMappingURL=style.css.map */

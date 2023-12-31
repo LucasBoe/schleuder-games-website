@@ -115,10 +115,9 @@ $xxl: 1400px;
             }
 
             &.end-cutoff {
-                height: 4vh;
-                margin-top: 0;
                 margin-bottom: 4vh;
-                $path: polygon(0 0, 100% 0%, 0% 100%);
+                padding-bottom: 4vh;
+                $path: polygon(0 0, 100% 0%, 100% calc(100% - 4vh), 0 100%);
                 -webkit-clip-path: $path;
                 clip-path: $path;
             }
@@ -324,6 +323,7 @@ $xxl: 1400px;
         z-index: 20;
         height: 100%;
         padding:  0.5vh;
+
     
         @media (min-width: $md) {
             background-color: black;
@@ -332,6 +332,12 @@ $xxl: 1400px;
             padding: 2vw 1vw 1vw;
             left: 3vw;
             top: 0;
+            transform-origin: top;
+            transition: transform 0.5s ease;
+            transform: scale(1);
+            &.small {
+                transform: scale(0.67);
+            }
         }
 
         img {
@@ -406,6 +412,17 @@ $xxl: 1400px;
                     }
                 }
             }
+        }
+    }
+
+    .scroll-fade {
+        opacity: 0;
+        transform: scale(0.8);
+        transition: all 0.5s ease-out;
+
+        &.in {
+            opacity: 1;
+            transform: scale(1);
         }
     }
 }
