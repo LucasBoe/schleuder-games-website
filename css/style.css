@@ -7,27 +7,77 @@
   --bezier: cubic-bezier(.5,-.75,.7,2);
 }
 :root .background {
-  position: absolute;
+  position: fixed;
   overflow: hidden;
   width: 100vw;
   height: 100vh;
 }
-:root .background ul {
-  position: fixed;
-  display: flex;
-  flex-wrap: wrap;
-  transform: rotate(-2deg);
-  left: -20vh;
-  top: -20vh;
-  width: calc(100% + 20vh + 20vh);
-  height: calc(100% + 20vh + 20vh);
+:root .background .main {
+  width: 1500px;
+  min-height: 100vw;
+  height: 1000px;
+  min-height: 100vh;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
 }
-:root .background ul li {
-  background-image: url(../img/pattern.png);
-  width: 20vh;
-  height: 20vh;
-  background-size: contain;
-  list-style: none;
+:root .background .main .section_wave {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-45deg);
+}
+:root .background .dash {
+  stroke-dasharray: 700;
+  animation: dash 15s linear infinite;
+  stroke: var(--highlightColor);
+}
+:root .background .dash_0 {
+  animation-delay: 0s;
+}
+:root .background .dash_1 {
+  transform: translateY(100px);
+  animation-delay: 2.5s;
+}
+:root .background .dash_2 {
+  transform: translateY(200px);
+  animation-delay: 6s;
+}
+:root .background .dash_3 {
+  transform: translateY(300px);
+  animation-delay: 4s;
+}
+:root .background .dash_4 {
+  transform: translateY(400px);
+  animation-delay: 1s;
+}
+:root .background .dash_5 {
+  transform: translateY(500px);
+  animation-delay: 5s;
+}
+:root .background .dash_6 {
+  transform: translateY(600px);
+  animation-delay: 3s;
+}
+:root .background .dash_7 {
+  transform: translateY(700px);
+  animation-delay: 1.5s;
+}
+:root .background .dash_8 {
+  transform: translateY(800px);
+  animation-delay: 5.5s;
+}
+:root .background .dash_9 {
+  transform: translateY(900px);
+  animation-delay: 1s;
+}
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 10;
+  }
+  100% {
+    stroke-dashoffset: 9800;
+  }
 }
 :root body {
   font-family: "Exo", sans-serif;
