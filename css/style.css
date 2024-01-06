@@ -13,9 +13,9 @@
   height: 100vh;
 }
 :root .background .main {
-  width: 1500px;
+  width: 150%;
   min-height: 100vw;
-  height: 1000px;
+  height: 200%;
   min-height: 100vh;
   position: relative;
   top: 50%;
@@ -36,39 +36,39 @@
   animation-delay: 0s;
 }
 :root .background .dash_1 {
-  transform: translateY(100px);
+  transform: translateY(20vh);
   animation-delay: 2.5s;
 }
 :root .background .dash_2 {
-  transform: translateY(200px);
+  transform: translateY(40vh);
   animation-delay: 6s;
 }
 :root .background .dash_3 {
-  transform: translateY(300px);
+  transform: translateY(60vh);
   animation-delay: 4s;
 }
 :root .background .dash_4 {
-  transform: translateY(400px);
+  transform: translateY(80vh);
   animation-delay: 1s;
 }
 :root .background .dash_5 {
-  transform: translateY(500px);
+  transform: translateY(100vh);
   animation-delay: 5s;
 }
 :root .background .dash_6 {
-  transform: translateY(600px);
+  transform: translateY(120vh);
   animation-delay: 3s;
 }
 :root .background .dash_7 {
-  transform: translateY(700px);
+  transform: translate(140vh);
   animation-delay: 1.5s;
 }
 :root .background .dash_8 {
-  transform: translateY(800px);
+  transform: translateY(160vh);
   animation-delay: 5.5s;
 }
 :root .background .dash_9 {
-  transform: translateY(900px);
+  transform: translateY(180vh);
   animation-delay: 1s;
 }
 @keyframes dash {
@@ -114,16 +114,10 @@
 :root .content {
   position: relative;
 }
-@media (min-width: 768px) {
-  :root .content {
-    width: 80vw;
-    margin-left: 10vw;
-  }
-}
 @media (min-width: 992px) {
   :root .content {
-    width: 70vw;
-    margin-left: 15vw;
+    width: 65vw;
+    margin-left: 17.5vw;
   }
 }
 :root .content .wrap {
@@ -131,28 +125,32 @@
 }
 @media (min-width: 768px) {
   :root .content .wrap {
-    padding: 6vw 10vw;
+    padding: 6vw 8vw;
   }
 }
 :root .content .backdrop {
   background-color: var(--backdropColor);
-  margin-top: 4vh;
+  margin-top: 0;
+  -webkit-clip-path: polygon(0 2.5vw, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
+  clip-path: polygon(0 2.5vw, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
 }
-:root .content .backdrop.edge-cutoff {
-  -webkit-clip-path: polygon(0 7vw, 100% 0%, 100% 100%, 0% 100%);
-  clip-path: polygon(0 7vw, 100% 0%, 100% 100%, 0% 100%);
-}
-:root .content .backdrop.end-cutoff {
-  margin-bottom: 4vh;
-  padding-bottom: 4vh;
-  -webkit-clip-path: polygon(0 0, 100% 0%, 100% calc(100% - 4vh), 0 100%);
-  clip-path: polygon(0 0, 100% 0%, 100% calc(100% - 4vh), 0 100%);
+:root .content .backdrop.top {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
 }
 :root .content #start {
-  padding-top: 20vh;
+  padding-top: 30vw;
 }
 :root .content #start p {
   padding-top: 2vw;
+}
+:root .content #start .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
 }
 :root .content #start .divider {
   border-top: white 1px solid;
@@ -177,7 +175,7 @@
   transition: all 0.2s var(--bezier);
 }
 :root .content #start .socials a img {
-  width: 5vh;
+  width: 3.5vw;
 }
 :root .content #start .socials a:hover {
   transform: scale(1.1);
@@ -328,12 +326,14 @@
     background-color: black;
     position: fixed;
     height: auto;
-    padding: 2vw 1vw 1vw;
-    left: 3vw;
+    padding: 1vw 1vw 1.75vw;
+    left: 8vw;
     top: 0;
     transform-origin: top;
     transition: transform 0.5s ease;
     transform: scale(1);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
   }
   :root .header-wrapper #logo.small {
     transform: scale(0.67);
@@ -344,7 +344,7 @@
 }
 @media (min-width: 768px) {
   :root .header-wrapper #logo img {
-    width: 8vw;
+    width: 6vw;
     height: auto;
   }
 }
@@ -363,14 +363,16 @@
     position: fixed;
     background-color: var(--backgroundColor);
     right: 0;
-    margin: 2%;
-    padding: 0.35% 1%;
+    margin: 1% calc(17.5vw + 1%);
+    padding: 0.2% 1%;
   }
 }
 :root .header-wrapper #nav .nav li {
   display: inline-block;
   position: relative;
   margin: auto;
+  line-height: 1;
+  padding: 0 2vh;
 }
 :root .header-wrapper #nav .nav li ::before {
   content: " ";
@@ -412,4 +414,13 @@
 :root .scroll-fade.in {
   opacity: 1;
   transform: scale(1);
+}
+
+.preview {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  opacity: 0.1;
+  top: 0;
+  left: 0;
 }/*# sourceMappingURL=style.css.map */

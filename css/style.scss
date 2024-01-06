@@ -19,15 +19,17 @@ $xxl: 1400px;
     $font-size: 12pt;
     $font-size-small: calc($unit * 1.25);
 
+    $bodySideOffset: 17.5vw;
+
     .background {
         position: fixed;
         overflow: hidden;
         width: 100vw;
         height: 100vh;
         .main {
-            width: 1500px;
+            width: 150%;
             min-height: 100vw;
-            height: 1000px;
+            height: 200%;
             min-height: 100vh;
             position: relative;
             top: 50%;
@@ -55,47 +57,47 @@ $xxl: 1400px;
             }
             
             &_1 {
-              transform: translateY(100px);
+              transform: translateY(20vh);
               animation-delay: 2.5s;
             }
             
             &_2 {
-              transform: translateY(200px);
+              transform: translateY(40vh);
               animation-delay: 6s;
             }
             
             &_3 {
-              transform: translateY(300px);
+              transform: translateY(60vh);
               animation-delay: 4s;
             }
             
             &_4 {
-              transform: translateY(400px);
+              transform: translateY(80vh);
               animation-delay: 1s;
             }
             
             &_5 {
-              transform: translateY(500px);
+              transform: translateY(100vh);
               animation-delay: 5s;
             }
             
             &_6 {
-              transform: translateY(600px);
+              transform: translateY(120vh);
               animation-delay: 3s;
             }
             
             &_7 {
-              transform: translateY(700px);
+              transform: translate(140vh);
               animation-delay: 1.5s;
             }
             
             &_8 {
-              transform: translateY(800px);
+              transform: translateY(160vh);
               animation-delay: 5.5s;
             }
             
             &_9 {
-              transform: translateY(900px);
+              transform: translateY(180vh);
               animation-delay: 1s;
             }
           }
@@ -160,47 +162,49 @@ $xxl: 1400px;
     .content {
         position: relative;
 
-        @media (min-width: $md) {
-            width: 80vw;
-            margin-left: 10vw;
-        }
-
         @media (min-width: $lg) {
-            width: 70vw;
-            margin-left: 15vw;
+            width: 65vw;
+            margin-left: $bodySideOffset;
         }
 
         .wrap {
             padding: 4vh 6vw;
 
             @media (min-width: $md) {
-                padding: 6vw 10vw;
+                padding: 6vw 8vw;
             }
         }
 
         .backdrop {
             background-color: var(--backdropColor);
-            margin-top: 4vh;
+            margin-top: 0;
 
-            &.edge-cutoff {
-                $path: polygon(0 7vw, 100% 0%, 100% 100%, 0% 100%);
-                -webkit-clip-path: $path;
-                clip-path: $path;
-            }
+            $path: polygon(0 2.5vw, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
+            -webkit-clip-path: $path;
+            clip-path: $path;
 
-            &.end-cutoff {
-                margin-bottom: 4vh;
-                padding-bottom: 4vh;
-                $path: polygon(0 0, 100% 0%, 100% calc(100% - 4vh), 0 100%);
+            &.top {
+                $path: polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
                 -webkit-clip-path: $path;
                 clip-path: $path;
             }
         }
 
         #start {
-            padding-top: 20vh;
+            padding-top: 30vw;
             p {
                 padding-top: 2vw;
+            }
+
+            .header {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+
+                $path: polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
+                -webkit-clip-path: $path;
+                clip-path: $path;
             }
 
             .divider {
@@ -225,7 +229,7 @@ $xxl: 1400px;
                     transition: all 0.2s var(--bezier);
         
                     img {
-                        width: 5vh;
+                        width: 3.5vw;
                     }
         
                     &:hover {
@@ -396,19 +400,24 @@ $xxl: 1400px;
         position: relative;
         z-index: 20;
         height: 100%;
-        padding:  0.5vh;
+        padding: 0.5vh;
 
     
         @media (min-width: $md) {
             background-color: black;
             position: fixed;
             height: auto;
-            padding: 2vw 1vw 1vw;
-            left: 3vw;
+            padding: 1vw 1vw 1.75vw;
+            left: 8vw;
             top: 0;
             transform-origin: top;
             transition: transform 0.5s ease;
             transform: scale(1);
+
+            $path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
+            -webkit-clip-path: $path;
+            clip-path: $path;
+
             &.small {
                 transform: scale(0.67);
             }
@@ -418,7 +427,7 @@ $xxl: 1400px;
             height: 100%;
 
             @media (min-width: $md) {
-                width: 8vw;
+                width: 6vw;
                 height: auto;
             }
         }
@@ -438,13 +447,15 @@ $xxl: 1400px;
                 position: fixed;
                 background-color: var(--backgroundColor);
                 right: 0;
-                margin: 2%;
-                padding: 0.35% 1%;
+                margin: 1% calc($bodySideOffset + 1%);
+                padding: 0.2% 1%;
             }
             li {
                 display: inline-block; 
                 position: relative;
                 margin: auto;
+                line-height: 1;
+                padding: 0 2vh;
 
                 ::before {
                     content: " ";
@@ -499,4 +510,14 @@ $xxl: 1400px;
             transform: scale(1);
         }
     }
+}
+
+.preview {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    opacity: 0.1;
+    top:0;
+    left:0;
+
 }
