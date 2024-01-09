@@ -58,6 +58,7 @@ $xxl: 1400px;
     h1, h2, h3, h4, h5, h6 {
         font-weight: 900;
         text-transform: uppercase;
+        margin-bottom: 0;
     }
 
     h1, h2 {
@@ -67,7 +68,7 @@ $xxl: 1400px;
         font-family: 'Pixel';
         font-size: 8vh;
         font-weight: normal;
-        line-height: 0.8;
+        line-height: 0.8;        
     }
 
     h5 {
@@ -224,46 +225,81 @@ $xxl: 1400px;
         }
 
         .backdrop {
-            background-color: var(--backdropColor);
-            margin-top: 0;
-
+            position: relative;
+            transform-origin: 50%;
             opacity: 1;
             transition:
-                transform 2s ease,
+                transform 0.3s ease,
                 opacity 0.5s ease;
 
-            $path: polygon(0 2.5vw, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
-            -webkit-clip-path: $path;
-            clip-path: $path;
+            &::before {
+                background-color: var(--backdropColor);
+                content: " ";
+                position:absolute;
+                z-index:-1;
+                top:0;
+                left:0;
+                right:0;
+                bottom:0;
+            }
+
 
             &.top {
+                $path: polygon(0 2.5vw, 100% 0, 100% 100%, 0 100%);
+                -webkit-clip-path: $path;
+                clip-path: $path;
+            }
+
+            
+            &.mid {
+                padding: 0 8vw;
+                
+                &::before {
+                    $size: 2vh;
+                    $path: polygon(
+                    0 0,
+                    100% 0,
+                    100% calc(50% - $size),
+                    calc(100% - $size) 50%,
+                    100% calc(50% + $size),
+                    100% 100%,
+                    0 100%,
+                    0 calc(50% + $size),
+                    $size 50%,
+                    0 calc(50% - $size)
+                    );
+                -webkit-clip-path: $path;
+                clip-path: $path;
+                top: -1px;
+                bottom: -1px;
+                }
+            }
+
+            &.bot {
                 $path: polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
                 -webkit-clip-path: $path;
                 clip-path: $path;
             }
 
             &.out {
-                transform: translateZ(-1px);
-                opacity: 0;
+                transform: translateZ(-0.5px);
             }
         }         
         
         .header {
-            position: absolute;
             top: 0;
             left: 0;
             height: 62vh;
             width: 100%;
 
             object-fit: cover;
-            
+
             $path: polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
             -webkit-clip-path: $path;
             clip-path: $path;
         }
 
-        #start {
-            padding-top: 64vh;            
+        #start {        
 
             .divider {
                 border-top: white 1px solid;
@@ -474,7 +510,7 @@ $xxl: 1400px;
             position: fixed;
             height: auto;
             padding: .5vw .5vw 1.5vw;
-            left: 8vw;
+            left: -12vw;
             top: 0;
             transform-origin: top;
             transition: transform 0.5s ease;

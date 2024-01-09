@@ -30,6 +30,7 @@ function makeOpaqueByScroll(amount) {
         }
     });
 
+    /*
     $(".backdrop").each(function( i ) {
 
         var offset =  $(this).attr("offset");
@@ -43,6 +44,7 @@ function makeOpaqueByScroll(amount) {
             $(this).addClass("out");
         }
     });
+    */
 
     var logoShouldBeSmall = amount > 100;
     var logoIsSmall = $("#logo").hasClass("small");
