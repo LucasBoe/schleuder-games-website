@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --backgroundColor: #1abc94;
   --highlightColor: #ff00ff;
@@ -5,6 +6,71 @@
   --headlineColor: #FF00D5;
   --textColor: white;
   --bezier: cubic-bezier(.5,-.75,.7,2);
+}
+@font-face {
+  font-family: "Pixel";
+  src: url("../fonts/x16y32pxGridGazer.woff") format("woff"), url("../fonts/x16y32pxGridGazer.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+:root body {
+  font-family: "Exo", sans-serif;
+  font-weight: 300;
+  color: var(--textColor);
+  background-color: var(--backgroundColor);
+  margin: 0;
+}
+:root p {
+  font-size: 1.7vh;
+}
+:root p b {
+  font-weight: 700;
+}
+:root a {
+  text-decoration: none;
+  color: var(--textColor);
+  transition: transform 0.5s ease;
+}
+:root a:hover {
+  transform: scale(1.05);
+}
+:root h1, :root h2, :root h3, :root h4, :root h5, :root h6 {
+  font-weight: 900;
+  text-transform: uppercase;
+}
+:root h1, :root h2 {
+  color: var(--headlineColor);
+}
+:root h1 {
+  font-family: "Pixel";
+  font-size: 8vh;
+  font-weight: normal;
+  line-height: 0.8;
+}
+:root h5 {
+  font-style: normal;
+  font-size: 1.8vh;
+}
+:root span {
+  position: absolute;
+  color: var(--textColor);
+  background-color: var(--backgroundColor);
+  z-index: 100;
+  font-size: 4vh;
+  padding: 0.1vh 1.5vh;
+  line-height: 1;
+  transform: rotate(-15deg);
+}
+:root span::before {
+  position: absolute;
+  left: calc(50% - 0.75vh);
+  bottom: calc(-1.5vh + 1px);
+  width: 1.5vh;
+  height: 1.5vh;
+  display: block;
+  background-color: var(--backgroundColor);
+  content: " ";
+  z-index: 50;
+  -webkit-clip-path: polygon(0 0, 100% 0, 50% 100%);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
 }
 :root .background {
   position: fixed;
@@ -79,45 +145,15 @@
     stroke-dashoffset: 9800;
   }
 }
-:root body {
-  font-family: "Exo", sans-serif;
-  font-weight: 300;
-  color: var(--textColor);
-  background-color: var(--backgroundColor);
-  margin: 0;
-}
-:root p {
-  font-size: 12pt;
-}
-:root p b {
-  font-weight: 700;
-}
-:root a {
-  text-decoration: none;
-  color: var(--textColor);
-  transition: transform 0.5s ease;
-}
-:root a:hover {
-  transform: scale(1.05);
-}
-:root h1, :root h2, :root h3, :root h4, :root h5, :root h6 {
-  font-weight: 900;
-}
-:root h1, :root h2 {
-  color: var(--headlineColor);
-  text-transform: uppercase;
-}
-:root h5 {
-  font-style: normal;
-  font-size: 1.8vh;
-}
 :root .content {
   position: relative;
 }
 @media (min-width: 992px) {
   :root .content {
-    width: 65vw;
-    margin-left: 17.5vw;
+    width: 64vw;
+    max-width: 120vh;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 :root .content .wrap {
@@ -138,19 +174,19 @@
   -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
 }
-:root .content #start {
-  padding-top: 30vw;
-}
-:root .content #start p {
-  padding-top: 2vw;
-}
-:root .content #start .header {
+:root .content .header {
   position: absolute;
   top: 0;
   left: 0;
+  height: 62vh;
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
+}
+:root .content #start {
+  padding-top: 64vh;
 }
 :root .content #start .divider {
   border-top: white 1px solid;
@@ -188,7 +224,7 @@
 }
 :root .content #spaceSprouts ul li {
   list-style: none;
-  font-size: 12pt;
+  font-size: 1.7vh;
 }
 :root .content #spaceSprouts ul li img {
   width: auto;
@@ -220,7 +256,7 @@
 :root .content #spaceSprouts .linkouts .row .col .item {
   display: flex;
   align-items: center;
-  font-size: 12pt;
+  font-size: 1.7vh;
 }
 :root .content #spaceSprouts .linkouts .row .col .item :first-child {
   padding-right: 1vh;
@@ -277,12 +313,15 @@
     text-align: start;
   }
 }
-:root .content #team .row .details h1 {
+:root .content #team .row .details h3 {
   color: var(--textColor);
+  font-weight: 600;
+  font-size: 1.9vh;
 }
-:root .content #team .row .details h2 {
+:root .content #team .row .details h4 {
   color: var(--textColor);
   font-weight: 300;
+  font-size: 1.9vh;
 }
 :root .overlay {
   z-index: 10;
@@ -292,16 +331,18 @@
   right: 0;
   bottom: 0;
   background-color: var(--backdropColor);
-  font-size: calc((0.5vh + 0.5vw) * 1.25);
+  font-size: 1.3vh;
   margin: 2vh;
-  padding: 1vh 2vh;
+  padding: 0.75vh 0;
   z-index: 10;
+  width: calc(18vw - 6vh);
+  text-align: center;
+  cursor: pointer;
 }
 :root .header-wrapper {
   position: fixed;
   top: 0;
-  left: 0;
-  margin: 0;
+  margin: auto;
   display: flex !important;
   width: 100vw;
   height: 6vh;
@@ -309,10 +350,13 @@
   align-content: space-between;
   background-color: #1abc94;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   :root .header-wrapper {
-    width: auto;
-    height: auto;
+    width: 64vw;
+    max-width: 120vh;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
   }
 }
 :root .header-wrapper #logo {
@@ -326,7 +370,7 @@
     background-color: black;
     position: fixed;
     height: auto;
-    padding: 1vw 1vw 1.75vw;
+    padding: 0.5vw 0.5vw 1.5vw;
     left: 8vw;
     top: 0;
     transform-origin: top;
@@ -344,37 +388,36 @@
 }
 @media (min-width: 768px) {
   :root .header-wrapper #logo img {
-    width: 6vw;
+    width: 7vw;
     height: auto;
   }
 }
-:root .header-wrapper #nav {
+:root .header-wrapper .nav {
   width: 100%;
   z-index: 20;
-}
-:root .header-wrapper #nav .nav {
   height: 100%;
   display: flex;
   justify-content: space-between;
 }
 @media (min-width: 768px) {
-  :root .header-wrapper #nav .nav {
+  :root .header-wrapper .nav {
+    width: auto;
     height: auto;
-    position: fixed;
+    position: absolute;
     background-color: var(--backgroundColor);
     right: 0;
-    margin: 1% calc(17.5vw + 1%);
     padding: 0.2% 1%;
+    margin: 2%;
   }
 }
-:root .header-wrapper #nav .nav li {
+:root .header-wrapper .nav li {
   display: inline-block;
   position: relative;
   margin: auto;
   line-height: 1;
-  padding: 0 2vh;
+  padding: 0.5vh 2vh;
 }
-:root .header-wrapper #nav .nav li ::before {
+:root .header-wrapper .nav li ::before {
   content: " ";
   background-color: var(--highlightColor);
   position: absolute;
@@ -386,24 +429,24 @@
   transform: rotate(-2deg);
   transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-:root .header-wrapper #nav .nav li.active ::before {
+:root .header-wrapper .nav li.active ::before {
   height: 50%;
   top: 50%;
   transform: rotate(0deg);
 }
-:root .header-wrapper #nav .nav li:hover ::before {
+:root .header-wrapper .nav li:hover ::before {
   height: 100%;
   top: 0;
   transform: rotate(2deg);
 }
-:root .header-wrapper #nav .nav li a {
-  font-size: medium;
+:root .header-wrapper .nav li a {
+  font-size: 1.7vh;
   padding: 2% 1vh;
   font-weight: 700;
   color: var(--backdropColor);
   text-transform: uppercase;
 }
-:root .header-wrapper #nav .nav li a:hover {
+:root .header-wrapper .nav li a:hover {
   background-color: transparent;
 }
 :root .scroll-fade {
@@ -414,13 +457,4 @@
 :root .scroll-fade.in {
   opacity: 1;
   transform: scale(1);
-}
-
-.preview {
-  position: absolute;
-  width: 100%;
-  height: auto;
-  opacity: 0.1;
-  top: 0;
-  left: 0;
 }/*# sourceMappingURL=style.css.map */

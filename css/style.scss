@@ -16,11 +16,95 @@ $xxl: 1400px;
 
     $unit: calc(0.5vh + 0.5vw);
 
-    $font-size: 12pt;
-    $font-size-small: calc($unit * 1.25);
+    $font-size-small: 1.3vh;
+    $font-size-regular: 1.7vh;
+    $font-size-normal: 1.9vh;
+    $font-size-l: 4vh;
+    $font-size-xl: 8vh;
 
-    $bodySideOffset: 17.5vw;
+    $bodySideOffset: 18vw;
 
+    @font-face {
+        font-family: 'Pixel';
+        src: url('../fonts/x16y32pxGridGazer.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+             url('../fonts/x16y32pxGridGazer.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+    }
+
+    body {
+        font-family: 'Exo', sans-serif;
+        font-weight: 300;
+        color: var(--textColor);
+        background-color: var(--backgroundColor);
+        margin: 0;
+    }
+
+    p {
+        font-size: $font-size-regular;
+        b {
+            font-weight: 700;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--textColor);
+        transition: transform 0.5s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 900;
+        text-transform: uppercase;
+    }
+
+    h1, h2 {
+        color: var(--headlineColor);
+    }
+    h1 {
+        font-family: 'Pixel';
+        font-size: 8vh;
+        font-weight: normal;
+        line-height: 0.8;
+    }
+
+    h5 {
+        font-style: normal;
+        font-size: 1.8vh;
+    }    
+
+    span {
+        position: absolute;
+        color: var(--textColor);
+        background-color: var(--backgroundColor);
+        z-index: 100;
+        font-size: $font-size-l;
+        padding: 0.1vh 1.5vh;
+        line-height: 1;
+        transform: rotate(-15deg);
+    }
+
+    span::before {
+        $size: 1.5vh;
+        position: absolute;
+        left: calc(50% - $size / 2);
+        bottom: calc(-1 * $size + 1px);
+        width: $size;
+        height: $size;
+        display: block;
+        background-color: var(--backgroundColor);
+        content: " ";
+        z-index: 50;
+
+        
+        $path: polygon(0 0, 100% 0, 50% 100%);
+        -webkit-clip-path: $path;
+        clip-path: $path;
+
+    }
+    
     .background {
         position: fixed;
         overflow: hidden;
@@ -120,51 +204,14 @@ $xxl: 1400px;
           }
     }
 
-    body {
-        font-family: 'Exo', sans-serif;
-        font-weight: 300;
-        color: var(--textColor);
-        background-color: var(--backgroundColor);
-        margin: 0;
-    }
-
-    p {
-        font-size: $font-size;
-        b {
-            font-weight: 700;
-        }
-    }
-
-    a {
-        text-decoration: none;
-        color: var(--textColor);
-        transition: transform 0.5s ease;
-
-        &:hover {
-            transform: scale(1.05);
-        }
-    }
-    
-    h1, h2, h3, h4, h5, h6 {
-        font-weight: 900;
-    }
-
-    h1, h2 {
-        color: var(--headlineColor);
-        text-transform: uppercase;
-    }
-
-    h5 {
-        font-style: normal;
-        font-size: 1.8vh;
-    }
-
     .content {
         position: relative;
 
         @media (min-width: $lg) {
-            width: 65vw;
-            margin-left: $bodySideOffset;
+            width: 64vw;
+            max-width: 120vh;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .wrap {
@@ -188,24 +235,24 @@ $xxl: 1400px;
                 -webkit-clip-path: $path;
                 clip-path: $path;
             }
+        }         
+        
+        .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 62vh;
+            width: 100%;
+
+            object-fit: cover;
+            
+            $path: polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
+            -webkit-clip-path: $path;
+            clip-path: $path;
         }
 
         #start {
-            padding-top: 30vw;
-            p {
-                padding-top: 2vw;
-            }
-
-            .header {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-
-                $path: polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
-                -webkit-clip-path: $path;
-                clip-path: $path;
-            }
+            padding-top: 64vh;            
 
             .divider {
                 border-top: white 1px solid;
@@ -248,7 +295,7 @@ $xxl: 1400px;
                 padding-top: 3vh;
                 li {
                     list-style: none;
-                    font-size: $font-size;
+                    font-size: $font-size-regular;
 
                     img {
                         width: auto;
@@ -283,7 +330,7 @@ $xxl: 1400px;
                         .item {
                             display: flex;
                             align-items: center;
-                            font-size: $font-size;
+                            font-size: $font-size-regular;
 
                             :first-child {
                                 padding-right: 1vh;
@@ -346,13 +393,16 @@ $xxl: 1400px;
                             text-align: start;
                         }
                         
-                        h1 {
+                        h3 {
                             color: var(--textColor);
+                            font-weight: 600;
+                            font-size: $font-size-normal;
                         }
                         
-                        h2 {
+                        h4 {
                             color: var(--textColor);
-                            font-weight: 300;
+                            font-weight: 300;                            
+                            font-size: $font-size-normal;
                         }
                     }
                 }
@@ -373,15 +423,17 @@ $xxl: 1400px;
         background-color: var(--backdropColor);
         font-size: $font-size-small;
         margin: 2vh;
-        padding: 1vh 2vh;
+        padding: 0.75vh 0;
         z-index: 10;
+        width: calc($bodySideOffset - 6vh);
+        text-align: center;
+        cursor: pointer;
     }
 
 .header-wrapper {
     position: fixed;
     top: 0;
-    left: 0;
-    margin: 0;
+    margin: auto;
     display: flex !important;
     width: 100vw;
     height: 6vh;
@@ -390,9 +442,12 @@ $xxl: 1400px;
 
     background-color: #1abc94;
 
-    @media (min-width: $md) {
-        width: auto;
-        height: auto;
+    @media (min-width: $lg) {
+        width: 64vw;
+        max-width: 120vh;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: transparent;
     }
 
 
@@ -407,7 +462,7 @@ $xxl: 1400px;
             background-color: black;
             position: fixed;
             height: auto;
-            padding: 1vw 1vw 1.75vw;
+            padding: .5vw .5vw 1.5vw;
             left: 8vw;
             top: 0;
             transform-origin: top;
@@ -427,35 +482,35 @@ $xxl: 1400px;
             height: 100%;
 
             @media (min-width: $md) {
-                width: 6vw;
+                width: 7vw;
                 height: auto;
             }
         }
     }
     
-    #nav {
+    .nav {       
+            width: 100%;
+            z-index: 20;
 
-        width: 100%;
-        z-index: 20;
-        .nav {
             height: 100%;
             display: flex;
             justify-content: space-between;
 
             @media (min-width: $md) {
+                width: auto;
                 height: auto;
-                position: fixed;
+                position: absolute;
                 background-color: var(--backgroundColor);
                 right: 0;
-                margin: 1% calc($bodySideOffset + 1%);
                 padding: 0.2% 1%;
+                margin: 2%;
             }
             li {
                 display: inline-block; 
                 position: relative;
                 margin: auto;
                 line-height: 1;
-                padding: 0 2vh;
+                padding: 0.5vh 2vh;
 
                 ::before {
                     content: " ";
@@ -486,7 +541,7 @@ $xxl: 1400px;
                         }
                     }
                     a {
-                        font-size: medium;
+                        font-size: $font-size-regular;
                         padding: 2% 1vh;
                         font-weight: 700;
                         color: var(--backdropColor);
@@ -496,7 +551,6 @@ $xxl: 1400px;
                         }
                     }
                 }
-            }
         }
     }
 
@@ -510,14 +564,4 @@ $xxl: 1400px;
             transform: scale(1);
         }
     }
-}
-
-.preview {
-    position: absolute;
-    width: 100%;
-    height: auto;
-    opacity: 0.1;
-    top:0;
-    left:0;
-
 }
