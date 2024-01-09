@@ -206,6 +206,7 @@ $xxl: 1400px;
 
     .content {
         position: relative;
+        perspective: 10px;
 
         @media (min-width: $lg) {
             width: 64vw;
@@ -226,6 +227,11 @@ $xxl: 1400px;
             background-color: var(--backdropColor);
             margin-top: 0;
 
+            opacity: 1;
+            transition:
+                transform 2s ease,
+                opacity 0.5s ease;
+
             $path: polygon(0 2.5vw, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
             -webkit-clip-path: $path;
             clip-path: $path;
@@ -234,6 +240,11 @@ $xxl: 1400px;
                 $path: polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
                 -webkit-clip-path: $path;
                 clip-path: $path;
+            }
+
+            &.out {
+                transform: translateZ(-1px);
+                opacity: 0;
             }
         }         
         

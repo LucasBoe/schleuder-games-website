@@ -23,5 +23,4 @@ $(() => {
 
         $(this).css({'transform' : 'translate(' + x +'px, ' + y + 'px) scaleX(1.5)'});
     });
-    console.log(lastRoll);
 });

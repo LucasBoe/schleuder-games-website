@@ -1,5 +1,9 @@
 $(() => {
 
+    $(".backdrop").each(function( i ) {
+        $(this).attr("offset", $(this).offset().top );
+    });
+
     makeOpaqueByScroll(0);
     console.log("Loaded");
 
@@ -23,8 +27,20 @@ function makeOpaqueByScroll(amount) {
         
         if (shouldBevisible && !$(this).hasClass("in")) {
             $(this).addClass("in");
-        } else if (!shouldBevisible && $(this).hasClass("in")) {
-            $(this).removeClass("in");
+        }
+    });
+
+    $(".backdrop").each(function( i ) {
+
+        var offset =  $(this).attr("offset");
+        var strength =  Math.abs(offset - amount);
+
+        var shouldBevisible = strength < 500;
+        
+        if (shouldBevisible && $(this).hasClass("out")) {
+            $(this).removeClass("out");
+        } else if (!shouldBevisible && !$(this).hasClass("out")) {
+            $(this).addClass("out");
         }
     });
 

@@ -147,6 +147,7 @@
 }
 :root .content {
   position: relative;
+  perspective: 10px;
 }
 @media (min-width: 992px) {
   :root .content {
@@ -167,12 +168,18 @@
 :root .content .backdrop {
   background-color: var(--backdropColor);
   margin-top: 0;
+  opacity: 1;
+  transition: transform 2s ease, opacity 0.5s ease;
   -webkit-clip-path: polygon(0 2.5vw, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
   clip-path: polygon(0 2.5vw, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
 }
 :root .content .backdrop.top {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
+}
+:root .content .backdrop.out {
+  transform: translateZ(-1px);
+  opacity: 0;
 }
 :root .content .header {
   position: absolute;
