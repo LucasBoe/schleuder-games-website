@@ -61,6 +61,16 @@
   transform: rotate(-15deg);
 }
 :root span::before {
+  background-color: var(--backgroundColor);
+  position: absolute;
+  left: -0.5vh;
+  right: -0.5vh;
+  bottom: 0.5vh;
+  top: 0.5vh;
+  content: " ";
+  z-index: -1;
+}
+:root span::after {
   position: absolute;
   left: calc(50% - 0.75vh);
   bottom: calc(-1.5vh + 1px);
@@ -78,6 +88,7 @@
   overflow: hidden;
   width: 100vw;
   height: 100vh;
+  display: none;
 }
 :root .background .main {
   width: 150%;
@@ -169,6 +180,7 @@
 :root .content .backdrop {
   position: relative;
   transform-origin: 50%;
+  min-height: 12vh;
   opacity: 1;
   transition: transform 0.3s ease, opacity 0.5s ease;
 }
@@ -187,13 +199,33 @@
   clip-path: polygon(0 2.5vw, 100% 0, 100% 100%, 0 100%);
 }
 :root .content .backdrop.mid {
-  padding: 0 8vw;
+  padding: 0 8vw 3vh;
+  display: flex;
+  align-items: end;
+  max-height: 12vh;
+}
+:root .content .backdrop.mid i {
+  font-style: normal;
+  background-color: var(--backdropColor);
 }
 :root .content .backdrop.mid::before {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(50% - 2vh), calc(100% - 2vh) 50%, 100% calc(50% + 2vh), 100% 100%, 0 100%, 0 calc(50% + 2vh), 2vh 50%, 0 calc(50% - 2vh));
   clip-path: polygon(0 0, 100% 0, 100% calc(50% - 2vh), calc(100% - 2vh) 50%, 100% calc(50% + 2vh), 100% 100%, 0 100%, 0 calc(50% + 2vh), 2vh 50%, 0 calc(50% - 2vh));
   top: -1px;
   bottom: -1px;
+}
+:root .content .backdrop.mid::after {
+  background-image: url("../img/line.png");
+  content: " ";
+  left: 4vh;
+  right: 4vh;
+  display: block;
+  height: 1vh;
+  background-repeat: repeat-x;
+  background-size: 2vh;
+  position: absolute;
+  z-index: -1;
+  top: calc(50% - 0.5vh);
 }
 :root .content .backdrop.bot {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
@@ -212,22 +244,14 @@
   -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
 }
-:root .content #start .divider {
-  border-top: white 1px solid;
-  height: 16pt;
-  overflow: visible;
-  display: flex;
-  align-items: end;
-  justify-content: center;
-  margin-top: 8vh;
+:root .content #start {
+  padding-top: 0;
 }
-:root .content #start .divider p {
-  background-color: var(--backdropColor);
-  padding: 0 12pt;
+:root .content #start p {
+  padding-bottom: 2vh;
 }
 :root .content #start .socials {
   display: flex;
-  justify-content: center;
 }
 :root .content #start .socials a {
   padding: 0 0.5vh;
@@ -240,7 +264,7 @@
 :root .content #start .socials a:hover {
   transform: scale(1.1);
 }
-:root .content #spaceSprouts img {
+:root .content .game-image {
   width: 100%;
 }
 :root .content #spaceSprouts ul {

@@ -88,6 +88,18 @@ $xxl: 1400px;
     }
 
     span::before {
+        $offset-size: 0.5vh;
+        background-color: var(--backgroundColor);
+        position: absolute;
+        left: -$offset-size;
+        right: -$offset-size;
+        bottom: $offset-size;
+        top: $offset-size;
+        content: " ";
+        z-index: -1;
+    }
+
+    span::after {
         $size: 1.5vh;
         position: absolute;
         left: calc(50% - $size / 2);
@@ -111,6 +123,7 @@ $xxl: 1400px;
         overflow: hidden;
         width: 100vw;
         height: 100vh;
+        display: none;
         .main {
             width: 150%;
             min-height: 100vw;
@@ -227,6 +240,7 @@ $xxl: 1400px;
         .backdrop {
             position: relative;
             transform-origin: 50%;
+            min-height: 12vh;
             opacity: 1;
             transition:
                 transform 0.3s ease,
@@ -252,7 +266,15 @@ $xxl: 1400px;
 
             
             &.mid {
-                padding: 0 8vw;
+                padding: 0 8vw 3vh;
+                display: flex;
+                align-items: end;
+                max-height: 12vh;
+
+                i {
+                    font-style: normal;
+                    background-color: var(--backdropColor);
+                }
                 
                 &::before {
                     $size: 2vh;
@@ -272,6 +294,21 @@ $xxl: 1400px;
                 clip-path: $path;
                 top: -1px;
                 bottom: -1px;
+                }
+
+                &::after {
+                    $height: 1vh;
+                    background-image: url("../img/line.png");
+                    content: " ";
+                    left: 4vh;
+                    right: 4vh;
+                    display: block;
+                    height: $height;
+                    background-repeat: repeat-x;
+                    background-size: 2vh;
+                    position: absolute;
+                    z-index: -1;
+                    top: calc(50% - $height / 2);
                 }
             }
 
@@ -299,24 +336,15 @@ $xxl: 1400px;
             clip-path: $path;
         }
 
-        #start {        
-
-            .divider {
-                border-top: white 1px solid;
-                height: 16pt;
-                overflow: visible;
-                display: flex;
-                align-items: end;
-                justify-content: center;
-                margin-top: 8vh;
-                p {
-                    background-color: var(--backdropColor);
-                    padding: 0 12pt;
-                }
+        #start {  
+            padding-top: 0;  
+            
+            p {
+                padding-bottom: 2vh;
             }
+
             .socials {
                 display: flex;
-                justify-content: center;
                 a {
                     padding: 0 0.5vh;
                     display: inline-block;
@@ -333,11 +361,11 @@ $xxl: 1400px;
             }
         }
 
-        #spaceSprouts {
-            img {
-                width: 100%;
-            }
+        .game-image {
+            width: 100%;
+        }
 
+        #spaceSprouts {
             ul {
                 padding-top: 3vh;
                 li {
