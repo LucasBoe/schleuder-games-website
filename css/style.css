@@ -59,6 +59,13 @@
   padding: 0.1vh 1.5vh;
   line-height: 1;
   transform: rotate(-15deg);
+  transition: all 0.5s cubic-bezier(0.57, 0.27, 0.63, 1.39);
+}
+:root span.left {
+  transform: rotate(15deg);
+}
+:root span.out {
+  transform: rotate(0) scale(0);
 }
 :root span::before {
   background-color: var(--backgroundColor);
@@ -95,6 +102,7 @@
   text-transform: uppercase;
   font-size: 3vh;
   line-height: 1;
+  transform: rotate(0);
 }
 :root .speechbubble-bottom b {
   color: var(--headlineColor);
