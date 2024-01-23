@@ -115,7 +115,53 @@ $xxl: 1400px;
         $path: polygon(0 0, 100% 0, 50% 100%);
         -webkit-clip-path: $path;
         clip-path: $path;
+    }
 
+    .speechbubble-bottom {
+        padding: 1vh;
+        margin: 2vh auto;
+        display: block;
+        width: fit-content;
+        background-color: var(--backdropColor);
+        position: relative;
+        font-family: "Pixel";
+        text-transform: uppercase;
+        font-size: 3vh;
+        line-height: 1;
+
+        b {
+            color: var(--headlineColor);
+        }
+
+        &::before {
+            $offset-size: 0.5vh;
+            background-color: var(--backdropColor);
+            position: absolute;
+            left: -$offset-size;
+            right: -$offset-size;
+            bottom: $offset-size;
+            top: $offset-size;
+            content: " ";
+            z-index: -1;
+        }
+    
+        &::after {
+            $size: 1.5vh;
+            position: absolute;
+            left: calc(50% - $size / 2);
+            top: calc(-1 * $size + 1px);
+            width: $size;
+            height: $size;
+            display: block;
+            background-color: var(--backdropColor);
+            content: " ";
+    
+            
+            $spath: polygon(0 100%, 100% 100%, 50% 0%);
+            -webkit-clip-path: $spath;
+            clip-path: $spath;
+            
+        }
     }
     
     .background {
@@ -123,7 +169,6 @@ $xxl: 1400px;
         overflow: hidden;
         width: 100vw;
         height: 100vh;
-        display: none;
         .main {
             width: 150%;
             min-height: 100vw;
@@ -230,10 +275,10 @@ $xxl: 1400px;
         }
 
         .wrap {
-            padding: 4vh 6vw;
+            padding: 0 4vh 6vw;
 
             @media (min-width: $md) {
-                padding: 6vw 8vw;
+                padding: 0 8vw 6vw;
             }
         }
 
@@ -337,8 +382,6 @@ $xxl: 1400px;
         }
 
         #start {  
-            padding-top: 0;  
-            
             p {
                 padding-bottom: 2vh;
             }
@@ -367,10 +410,13 @@ $xxl: 1400px;
 
         #spaceSprouts {
             ul {
-                padding-top: 3vh;
+                padding: 0;
+                margin-bottom: 4vh;
+
                 li {
                     list-style: none;
                     font-size: $font-size-regular;
+                    height: 5vh;
 
                     img {
                         width: auto;
@@ -489,18 +535,15 @@ $xxl: 1400px;
         z-index: 10;
     }
 
-
-
     .footer {
         position: fixed;
-        right: 0;
+        right: 1.5vh;
         bottom: 0;
         background-color: var(--backdropColor);
         font-size: $font-size-small;
         margin: 2vh;
-        padding: 0.75vh 0;
+        padding: 0.75vh 1.5vh;
         z-index: 10;
-        width: calc($bodySideOffset - 6vh);
         text-align: center;
         cursor: pointer;
     }

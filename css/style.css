@@ -83,12 +83,49 @@
   -webkit-clip-path: polygon(0 0, 100% 0, 50% 100%);
   clip-path: polygon(0 0, 100% 0, 50% 100%);
 }
+:root .speechbubble-bottom {
+  padding: 1vh;
+  margin: 2vh auto;
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: var(--backdropColor);
+  position: relative;
+  font-family: "Pixel";
+  text-transform: uppercase;
+  font-size: 3vh;
+  line-height: 1;
+}
+:root .speechbubble-bottom b {
+  color: var(--headlineColor);
+}
+:root .speechbubble-bottom::before {
+  background-color: var(--backdropColor);
+  position: absolute;
+  left: -0.5vh;
+  right: -0.5vh;
+  bottom: 0.5vh;
+  top: 0.5vh;
+  content: " ";
+  z-index: -1;
+}
+:root .speechbubble-bottom::after {
+  position: absolute;
+  left: calc(50% - 0.75vh);
+  top: calc(-1.5vh + 1px);
+  width: 1.5vh;
+  height: 1.5vh;
+  display: block;
+  background-color: var(--backdropColor);
+  content: " ";
+  -webkit-clip-path: polygon(0 100%, 100% 100%, 50% 0%);
+  clip-path: polygon(0 100%, 100% 100%, 50% 0%);
+}
 :root .background {
   position: fixed;
   overflow: hidden;
   width: 100vw;
   height: 100vh;
-  display: none;
 }
 :root .background .main {
   width: 150%;
@@ -170,11 +207,11 @@
   }
 }
 :root .content .wrap {
-  padding: 4vh 6vw;
+  padding: 0 4vh 6vw;
 }
 @media (min-width: 768px) {
   :root .content .wrap {
-    padding: 6vw 8vw;
+    padding: 0 8vw 6vw;
   }
 }
 :root .content .backdrop {
@@ -244,9 +281,6 @@
   -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
 }
-:root .content #start {
-  padding-top: 0;
-}
 :root .content #start p {
   padding-bottom: 2vh;
 }
@@ -268,11 +302,13 @@
   width: 100%;
 }
 :root .content #spaceSprouts ul {
-  padding-top: 3vh;
+  padding: 0;
+  margin-bottom: 4vh;
 }
 :root .content #spaceSprouts ul li {
   list-style: none;
   font-size: 1.7vh;
+  height: 5vh;
 }
 :root .content #spaceSprouts ul li img {
   width: auto;
@@ -376,14 +412,13 @@
 }
 :root .footer {
   position: fixed;
-  right: 0;
+  right: 1.5vh;
   bottom: 0;
   background-color: var(--backdropColor);
   font-size: 1.3vh;
   margin: 2vh;
-  padding: 0.75vh 0;
+  padding: 0.75vh 1.5vh;
   z-index: 10;
-  width: calc(18vw - 6vh);
   text-align: center;
   cursor: pointer;
 }
