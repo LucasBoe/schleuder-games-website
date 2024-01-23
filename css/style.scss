@@ -41,11 +41,12 @@ $xxl: 1400px;
 
     p {
         font-size: $font-size-regular;
-        b {
-            font-weight: 700;
-        }
     }
 
+    b {
+        font-weight: 700;
+    }
+    
     a {
         text-decoration: none;
         color: var(--textColor);
