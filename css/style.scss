@@ -169,6 +169,7 @@ $xxl: 1400px;
         overflow: hidden;
         width: 100vw;
         height: 100vh;
+        display: none;
         .main {
             width: 150%;
             min-height: 100vw;
@@ -263,16 +264,18 @@ $xxl: 1400px;
           }
     }
 
-    .content {
-        position: relative;
-        perspective: 10px;
-
+    .maxW {
         @media (min-width: $lg) {
             width: 64vw;
             max-width: 120vh;
             margin-left: auto;
             margin-right: auto;
         }
+    }
+
+    .content {
+        position: relative;
+        perspective: 10px;
 
         .wrap {
             padding: 0 4vh 6vw;
@@ -565,6 +568,7 @@ $xxl: 1400px;
         max-width: 120vh;
         margin-left: auto;
         margin-right: auto;
+        height: auto;
         background-color: transparent;
     }
 
@@ -578,7 +582,6 @@ $xxl: 1400px;
     
         @media (min-width: $md) {
             background-color: black;
-            position: fixed;
             height: auto;
             padding: .5vw .5vw 1.5vw;
             left: -12vw;
