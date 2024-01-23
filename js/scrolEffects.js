@@ -30,13 +30,17 @@ function makeOpaqueByScroll(amount) {
         }
     });
 
-    /*
-    $(".backdrop").each(function( i ) {
+    
+    $("span").each(function( i ) {
 
-        var offset =  $(this).attr("offset");
-        var strength =  Math.abs(offset - amount);
+        var att = $(this).attr("off");
+        if (att == undefined)
+            att = 0;
 
-        var shouldBevisible = strength < 500;
+        var offset = $(window).height() * 0.5;
+        var strength = $(this).offset().top - amount - offset;
+
+        var shouldBevisible = Math.abs( strength) < 200;
         
         if (shouldBevisible && $(this).hasClass("out")) {
             $(this).removeClass("out");
@@ -44,7 +48,7 @@ function makeOpaqueByScroll(amount) {
             $(this).addClass("out");
         }
     });
-    */
+    
 
     var logoShouldBeSmall = amount > 100;
     var logoIsSmall = $("#logo").hasClass("small");
