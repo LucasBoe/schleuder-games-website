@@ -420,6 +420,9 @@ $xxl: 1400px;
 
         .game-image {
             width: 100%;
+            $path: polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
+            -webkit-clip-path: $path;
+            clip-path: $path;
         }
 
         #spaceSprouts {
