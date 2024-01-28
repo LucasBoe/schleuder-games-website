@@ -7,7 +7,7 @@ $xxl: 1400px;
 
 :root {
     
-    --backgroundColor: #1abc94;
+    --backgroundColor: #0dc486;
     --backgroundAccentA: #16a27f;
     --backgroundAccentB: #19b18b;
     --highlightColor: #ff00ff;
@@ -86,7 +86,7 @@ $xxl: 1400px;
         background-color: var(--backgroundColor);
         z-index: 100;
         font-size: $font-size-l;
-        padding: 0.1vh 1.5vh;
+        padding: 0.1vh .5vh;
         line-height: 1;
         transform: rotate(-15deg);
         transition: all .5s $easeOutBack;
@@ -390,7 +390,7 @@ $xxl: 1400px;
                     display: block;
                     height: $height;
                     background-repeat: repeat-x;
-                    background-size: 2vh;
+                    background-size: 2.6vh;
                     position: absolute;
                     z-index: -1;
                     top: calc(50% - $height / 2);
@@ -623,8 +623,8 @@ $xxl: 1400px;
         @media (min-width: $lg) {
             background-color: black;
             height: auto;
-            padding: .5vw .5vw 1.5vw;
-            left: -9.5vw;
+            padding: .3vw .3vw 1vw;
+            left: -10vw;
             top: 0;
             transform-origin: top;
             transition: transform 0.5s ease;
@@ -643,7 +643,7 @@ $xxl: 1400px;
             height: 100%;
 
             @media (min-width: $lg) {
-                width: 7vw;
+                width: 8vw;
                 height: auto;
             }
         }

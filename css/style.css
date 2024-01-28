@@ -1,6 +1,6 @@
 @charset "UTF-8";
 :root {
-  --backgroundColor: #1abc94;
+  --backgroundColor: #0dc486;
   --backgroundAccentA: #16a27f;
   --backgroundAccentB: #19b18b;
   --highlightColor: #ff00ff;
@@ -58,7 +58,7 @@
   background-color: var(--backgroundColor);
   z-index: 100;
   font-size: 4.5vh;
-  padding: 0.1vh 1.5vh;
+  padding: 0.1vh 0.5vh;
   line-height: 1;
   transform: rotate(-15deg);
   transition: all 0.5s cubic-bezier(0.57, 0.27, 0.63, 1.39);
@@ -290,7 +290,7 @@
   display: block;
   height: 1vh;
   background-repeat: repeat-x;
-  background-size: 2vh;
+  background-size: 2.6vh;
   position: absolute;
   z-index: -1;
   top: calc(50% - 0.5vh);
@@ -486,8 +486,8 @@
   :root .header-wrapper #logo {
     background-color: black;
     height: auto;
-    padding: 0.5vw 0.5vw 1.5vw;
-    left: -9.5vw;
+    padding: 0.3vw 0.3vw 1vw;
+    left: -10vw;
     top: 0;
     transform-origin: top;
     transition: transform 0.5s ease;
@@ -504,7 +504,7 @@
 }
 @media (min-width: 992px) {
   :root .header-wrapper #logo img {
-    width: 7vw;
+    width: 8vw;
     height: auto;
   }
 }
