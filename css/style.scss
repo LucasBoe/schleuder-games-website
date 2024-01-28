@@ -8,6 +8,8 @@ $xxl: 1400px;
 :root {
     
     --backgroundColor: #1abc94;
+    --backgroundAccentA: #16a27f;
+    --backgroundAccentB: #19b18b;
     --highlightColor: #ff00ff;
     --backdropColor: black;
     --headlineColor: #FF00D5;
@@ -19,8 +21,8 @@ $xxl: 1400px;
     $font-size-small: 1.3vh;
     $font-size-regular: 1.7vh;
     $font-size-normal: 1.9vh;
-    $font-size-l: 4vh;
-    $font-size-xl: 8vh;
+    $font-size-l: 4.5vh;
+    $font-size-xl: 6vh;
 
     $bodySideOffset: 18vw;
     $easeOutBack : cubic-bezier(.57,.27,.63,1.39);
@@ -192,20 +194,48 @@ $xxl: 1400px;
             transform: translate3d(-50%, -50%, 0);
             
             .section {
-              &_wave {
+                position: absolute;
                 width: 100%;
-                height: 100%;
-                transform: rotate(-45deg);
+              &_wave {
+                top: 0;
+                transform: rotate(-30deg);
+                display: none;
+                @media (min-width: $lg) {}
+                display: inherit;
               }
+
+              &_hills {             
+                   bottom: 25%;
+                   transform: scaleX(133.34%);                 
+                   animation: _move 7s linear infinite;
+              }
+
+              @keyframes _move {
+            
+                0% {                    
+                   transform: translateX(-33%)  scaleX(133.34%);
+                }
+
+                100% {
+                    transform: translateX(33%)  scaleX(133.34%);
+                }
+              }
+            }
+          }
+
+          .hill {
+            fill: var(--backgroundAccentB);
+
+            &_1 {
+                transform: translateY(25%);
+                fill: var(--backgroundAccentA);
             }
           }
           
           .dash {
             stroke-dasharray: 700;
-            animation: dash 15s linear infinite;
-            stroke: var(--highlightColor);;
-            
-            //TODO: Random position, delay and color
+            animation: dash 25s linear infinite;
+            stroke: var(--highlightColor);
             
             &_0 {
               animation-delay: 0s;
@@ -218,42 +248,32 @@ $xxl: 1400px;
             
             &_2 {
               transform: translateY(40vh);
-              animation-delay: 6s;
+              animation-delay: 3s;
             }
             
             &_3 {
-              transform: translateY(60vh);
-              animation-delay: 4s;
+              transform: translate(10vh,50vh);
+              animation-delay: 3.5s;
             }
             
             &_4 {
-              transform: translateY(80vh);
+              transform: translateY(60vh);
               animation-delay: 1s;
             }
             
             &_5 {
-              transform: translateY(100vh);
+              transform: translateY(80vh);
               animation-delay: 5s;
             }
             
             &_6 {
-              transform: translateY(120vh);
-              animation-delay: 3s;
+              transform: translate(10vh,90vh);
+              animation-delay: 4.5s;
             }
             
             &_7 {
-              transform: translate(140vh);
+              transform: translate(100vh);
               animation-delay: 1.5s;
-            }
-            
-            &_8 {
-              transform: translateY(160vh);
-              animation-delay: 5.5s;
-            }
-            
-            &_9 {
-              transform: translateY(180vh);
-              animation-delay: 1s;
             }
           }
           
@@ -285,6 +305,7 @@ $xxl: 1400px;
     }
 
     .content {
+
         position: relative;
         perspective: 10px;
 
@@ -337,7 +358,11 @@ $xxl: 1400px;
                 
                 &::before {
                     $size: 2vh;
-                    $path: polygon(
+
+                    @media (min-width: $lg) {
+        
+                        
+                        $path: polygon(
                     0 0,
                     100% 0,
                     100% calc(50% - $size),
@@ -349,8 +374,9 @@ $xxl: 1400px;
                     $size 50%,
                     0 calc(50% - $size)
                     );
-                -webkit-clip-path: $path;
-                clip-path: $path;
+                    -webkit-clip-path: $path;
+                    clip-path: $path;
+                }
                 top: -1px;
                 bottom: -1px;
                 }
@@ -385,7 +411,7 @@ $xxl: 1400px;
         .header {
             top: 0;
             left: 0;
-            height: 62vh;
+            height: 55vh;
             width: 100%;
 
             object-fit: cover;
@@ -594,11 +620,11 @@ $xxl: 1400px;
         padding: 0.5vh;
 
     
-        @media (min-width: $md) {
+        @media (min-width: $lg) {
             background-color: black;
             height: auto;
             padding: .5vw .5vw 1.5vw;
-            left: -12vw;
+            left: -9.5vw;
             top: 0;
             transform-origin: top;
             transition: transform 0.5s ease;
@@ -616,7 +642,7 @@ $xxl: 1400px;
         img {
             height: 100%;
 
-            @media (min-width: $md) {
+            @media (min-width: $lg) {
                 width: 7vw;
                 height: auto;
             }
@@ -631,7 +657,7 @@ $xxl: 1400px;
             display: flex;
             justify-content: space-between;
 
-            @media (min-width: $md) {
+            @media (min-width: $lg) {
                 width: auto;
                 height: auto;
                 position: absolute;
@@ -645,7 +671,7 @@ $xxl: 1400px;
                 position: relative;
                 margin: auto;
                 line-height: 1;
-                padding: 0.5vh 2vh;
+                padding: 0.5vh 1.5vh;
 
                 ::before {
                     content: " ";
@@ -676,7 +702,7 @@ $xxl: 1400px;
                         }
                     }
                     a {
-                        font-size: $font-size-regular;
+                        font-size: $font-size-normal;
                         padding: 2% 1vh;
                         font-weight: 700;
                         color: var(--backdropColor);
