@@ -313,7 +313,7 @@ $xxl: 1400px;
             padding: 0 4vh 6vw;
 
             @media (min-width: $md) {
-                padding: 0 8vw 6vw;
+                padding: 0 16vh 9vh;
             }
         }
 
@@ -346,7 +346,7 @@ $xxl: 1400px;
 
             
             &.mid {
-                padding: 0 8vw 3vh;
+                padding: 0 16vh 3vh;
                 display: flex;
                 align-items: end;
                 max-height: 12vh;
@@ -434,7 +434,7 @@ $xxl: 1400px;
                     transition: all 0.2s var(--bezier);
         
                     img {
-                        width: 3.5vw;
+                        width: $font-size-l;
                     }
         
                     &:hover {

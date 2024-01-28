@@ -238,7 +238,7 @@
 }
 @media (min-width: 768px) {
   :root .content .wrap {
-    padding: 0 8vw 6vw;
+    padding: 0 16vh 9vh;
   }
 }
 :root .content .backdrop {
@@ -263,7 +263,7 @@
   clip-path: polygon(0 2.5vw, 100% 0, 100% 100%, 0 100%);
 }
 :root .content .backdrop.mid {
-  padding: 0 8vw 3vh;
+  padding: 0 16vh 3vh;
   display: flex;
   align-items: end;
   max-height: 12vh;
@@ -324,7 +324,7 @@
   transition: all 0.2s var(--bezier);
 }
 :root .content #start .socials a img {
-  width: 3.5vw;
+  width: 4.5vh;
 }
 :root .content #start .socials a:hover {
   transform: scale(1.1);
