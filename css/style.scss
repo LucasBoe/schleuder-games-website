@@ -69,7 +69,7 @@ $xxl: 1400px;
         color: var(--headlineColor);
     }
     h1 {
-        font-family: 'Pixel';
+        font-family: 'Pixel', sans-serif;
         font-size: 8vh;
         font-weight: normal;
         line-height: 0.8;        
@@ -137,7 +137,7 @@ $xxl: 1400px;
         width: fit-content;
         background-color: var(--backdropColor);
         position: relative;
-        font-family: "Pixel";
+        font-family: "Pixel", sans-serif;
         text-transform: uppercase;
         font-size: 3vh;
         line-height: 1;
