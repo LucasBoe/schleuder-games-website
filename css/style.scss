@@ -70,9 +70,13 @@ $xxl: 1400px;
     }
     h1 {
         font-family: 'Pixel', sans-serif;
-        font-size: 8vh;
         font-weight: normal;
-        line-height: 0.8;        
+        line-height: 0.8;     
+        font-size: 6vh;
+
+        @media (min-width: $md) {
+            font-size: 8vh;
+        }
     }
 
     h5 {
@@ -296,12 +300,21 @@ $xxl: 1400px;
     }
 
     .maxW {
+
         @media (min-width: $lg) {
+            width: 80vw;
+            max-width: 120vh;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (min-width: $xxl) {
             width: 64vw;
             max-width: 120vh;
             margin-left: auto;
             margin-right: auto;
         }
+
     }
 
     .content {
@@ -346,10 +359,14 @@ $xxl: 1400px;
 
             
             &.mid {
-                padding: 0 16vh 3vh;
                 display: flex;
                 align-items: end;
                 max-height: 12vh;
+                padding: 0 4vh 3vh;
+
+                @media (min-width: $md) {
+                    padding: 0 16vh 3vh;
+                }
 
                 i {
                     font-style: normal;

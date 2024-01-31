@@ -44,9 +44,14 @@
 }
 :root h1 {
   font-family: "Pixel", sans-serif;
-  font-size: 8vh;
   font-weight: normal;
   line-height: 0.8;
+  font-size: 6vh;
+}
+@media (min-width: 768px) {
+  :root h1 {
+    font-size: 8vh;
+  }
 }
 :root h5 {
   font-style: normal;
@@ -223,6 +228,14 @@
 }
 @media (min-width: 992px) {
   :root .maxW {
+    width: 80vw;
+    max-width: 120vh;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (min-width: 1400px) {
+  :root .maxW {
     width: 64vw;
     max-width: 120vh;
     margin-left: auto;
@@ -263,10 +276,15 @@
   clip-path: polygon(0 2.5vw, 100% 0, 100% 100%, 0 100%);
 }
 :root .content .backdrop.mid {
-  padding: 0 16vh 3vh;
   display: flex;
   align-items: end;
   max-height: 12vh;
+  padding: 0 4vh 3vh;
+}
+@media (min-width: 768px) {
+  :root .content .backdrop.mid {
+    padding: 0 16vh 3vh;
+  }
 }
 :root .content .backdrop.mid i {
   font-style: normal;
