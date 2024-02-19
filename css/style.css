@@ -62,11 +62,17 @@
   color: var(--textColor);
   background-color: var(--backgroundColor);
   z-index: 100;
-  font-size: 4.5vh;
-  padding: 0.1vh 0.5vh;
   line-height: 1;
   transform: rotate(-15deg);
   transition: all 0.5s cubic-bezier(0.57, 0.27, 0.63, 1.39);
+  font-size: 1.9vh;
+  padding: 1vh 2vh;
+}
+@media (min-width: 768px) {
+  :root span {
+    padding: 0.1vh 0.5vh;
+    font-size: 4.5vh;
+  }
 }
 :root span.left {
   transform: rotate(15deg);
@@ -98,7 +104,6 @@
   clip-path: polygon(0 0, 100% 0, 50% 100%);
 }
 :root .speechbubble-bottom {
-  padding: 1vh;
   margin: 2vh auto;
   display: block;
   width: -moz-fit-content;
@@ -107,9 +112,16 @@
   position: relative;
   font-family: "Pixel", sans-serif;
   text-transform: uppercase;
-  font-size: 3vh;
+  font-size: 2vh;
   line-height: 1;
   transform: rotate(0);
+  padding: 1vh 3vh;
+}
+@media (min-width: 992px) {
+  :root .speechbubble-bottom {
+    font-size: 3vh;
+    padding: 1vh;
+  }
 }
 :root .speechbubble-bottom b {
   color: var(--headlineColor);
@@ -278,6 +290,12 @@
 :root .content .backdrop.top {
   -webkit-clip-path: polygon(0 2.5vw, 100% 0, 100% 100%, 0 100%);
   clip-path: polygon(0 2.5vw, 100% 0, 100% 100%, 0 100%);
+  margin-top: 4vh;
+}
+@media (min-width: 992px) {
+  :root .content .backdrop.top {
+    margin-top: 0;
+  }
 }
 :root .content .backdrop.mid {
   display: flex;
@@ -303,8 +321,8 @@
 :root .content .backdrop.mid::after {
   background-image: url("../img/line.png");
   content: " ";
-  left: 4vh;
-  right: 4vh;
+  left: 0;
+  right: 0;
   display: block;
   height: 1vh;
   background-repeat: repeat-x;
@@ -312,6 +330,12 @@
   position: absolute;
   z-index: -1;
   top: calc(50% - 0.5vh);
+}
+@media (min-width: 992px) {
+  :root .content .backdrop.mid::after {
+    left: 4vh;
+    right: 4vh;
+  }
 }
 :root .content .backdrop.bot {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
@@ -383,7 +407,7 @@
   padding-top: 1vh;
   vertical-align: middle;
 }
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   :root .content #spaceSprouts .linkouts .row .col {
     padding-top: 0;
     max-width: 33%;
@@ -401,12 +425,22 @@
   width: auto;
   max-width: 8vh;
 }
+:root .content #spaceSprouts .linkouts .row .col .item.regular {
+  font-size: 2.5vh;
+}
+@media (min-width: 992px) {
+  :root .content #spaceSprouts .linkouts .row .col .item.regular {
+    font-size: 1.7vh;
+  }
+}
 :root .content #spaceSprouts .linkouts .row .col .item.special {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
 }
 :root .content #spaceSprouts .linkouts .row .col .item.special img {
   width: 100%;
-  max-width: calc((0.5vh + 0.5vw) * 15);
+  max-width: calc((0.5vh + 0.5vw) * 24);
   padding-left: 1vw;
 }
 @media (min-width: 992px) {
@@ -418,18 +452,13 @@
   padding-bottom: 20px;
   display: block;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   :root .content #team .row {
     display: flex;
   }
 }
 :root .content #team .row .col-auto {
-  text-align: center;
-}
-@media (min-width: 576px) {
-  :root .content #team .row .col-auto {
-    text-align: start;
-  }
+  text-align: start;
 }
 :root .content #team .row img {
   max-height: 20vh;
@@ -442,12 +471,7 @@
 }
 :root .content #team .row .details {
   padding-top: 3vh;
-  text-align: center;
-}
-@media (min-width: 576px) {
-  :root .content #team .row .details {
-    text-align: start;
-  }
+  text-align: start;
 }
 :root .content #team .row .details h3 {
   color: var(--textColor);
@@ -494,7 +518,7 @@
   margin: auto;
   display: flex !important;
   width: 100vw;
-  height: 6vh;
+  height: 4vh;
   z-index: 10;
   align-content: space-between;
   background-color: #1abc94;
@@ -515,7 +539,7 @@
   height: 100%;
   padding: 0.5vh;
   background-color: black;
-  padding: 0.3vw 0.3vw 1vw;
+  padding: 1.7vh 0.3vw 1vw;
   height: auto;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
@@ -526,6 +550,7 @@
 @media (min-width: 992px) {
   :root .header-wrapper #logo {
     margin-bottom: auto;
+    padding: 0.3vw 0.3vw 1vw;
     left: -10vw;
     transform-origin: top;
     transition: transform 0.5s ease;
@@ -550,6 +575,7 @@
   height: 100%;
   display: flex;
   justify-content: space-between;
+  margin-left: 3vw;
 }
 @media (min-width: 992px) {
   :root .header-wrapper .nav {
@@ -567,7 +593,11 @@
   position: relative;
   margin: auto;
   line-height: 1;
-  padding: 0.5vh 1.5vh;
+}
+@media (min-width: 992px) {
+  :root .header-wrapper .nav li {
+    padding: 0.5vh 1.5vh;
+  }
 }
 :root .header-wrapper .nav li ::before {
   content: " ";

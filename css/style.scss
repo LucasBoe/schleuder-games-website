@@ -21,6 +21,7 @@ $xxl: 1400px;
     $font-size-small: 1.3vh;
     $font-size-regular: 1.7vh;
     $font-size-normal: 1.9vh;
+    $font-size-bigger: 2.5vh;
     $font-size-l: 4.5vh;
     $font-size-xl: 6vh;
 
@@ -89,11 +90,16 @@ $xxl: 1400px;
         color: var(--textColor);
         background-color: var(--backgroundColor);
         z-index: 100;
-        font-size: $font-size-l;
-        padding: 0.1vh .5vh;
         line-height: 1;
         transform: rotate(-15deg);
-        transition: all .5s $easeOutBack;
+        transition: all .5s $easeOutBack;        
+        font-size: $font-size-normal;
+        padding: 1vh 2vh;
+
+        @media (min-width: $md) {   
+            padding: 0.1vh .5vh;         
+            font-size: $font-size-l;
+        }
 
         &.left {
             transform: rotate(15deg);
@@ -134,8 +140,7 @@ $xxl: 1400px;
         clip-path: $path;
     }
 
-    .speechbubble-bottom {
-        padding: 1vh;
+    .speechbubble-bottom { 
         margin: 2vh auto;
         display: block;
         width: fit-content;
@@ -143,9 +148,16 @@ $xxl: 1400px;
         position: relative;
         font-family: "Pixel", sans-serif;
         text-transform: uppercase;
-        font-size: 3vh;
+        font-size: 2vh;
         line-height: 1;
         transform: rotate(0);
+        padding: 1vh 3vh;
+
+        
+        @media (min-width: $lg) {
+            font-size: 3vh;
+            padding: 1vh;
+        }
 
         b {
             color: var(--headlineColor);
@@ -360,6 +372,11 @@ $xxl: 1400px;
                 $path: polygon(0 2.5vw, 100% 0, 100% 100%, 0 100%);
                 -webkit-clip-path: $path;
                 clip-path: $path;
+                margin-top: 4vh;
+
+                @media (min-width: $lg) {
+                    margin-top: 0;
+                }          
             }
 
             
@@ -402,8 +419,8 @@ $xxl: 1400px;
                     $height: 1vh;
                     background-image: url("../img/line.png");
                     content: " ";
-                    left: 4vh;
-                    right: 4vh;
+                    left: 0;
+                    right: 0;
                     display: block;
                     height: $height;
                     background-repeat: repeat-x;
@@ -411,6 +428,12 @@ $xxl: 1400px;
                     position: absolute;
                     z-index: -1;
                     top: calc(50% - $height / 2);
+
+                    @media (min-width: $lg) {
+                        left: 4vh;
+                        right: 4vh;
+                    }
+
                 }
             }
 
@@ -504,7 +527,7 @@ $xxl: 1400px;
                         padding-top: 1vh;
                         vertical-align: middle;
 
-                        @media (min-width: $lg) {
+                        @media (min-width: $xl) {
                             padding-top: 0;
                             max-width: 33%;
                         }
@@ -522,12 +545,20 @@ $xxl: 1400px;
                                 width: auto;
                                 max-width: 8vh;
                             }
+                            &.regular {                                
+                            font-size: $font-size-bigger;
+                                @media (min-width: $lg) {
+                                    font-size: $font-size-regular;
+                                }
+                            }
                             
                             &.special {
-                                display: block;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: baseline;
                                 img {
                                     width: 100%;
-                                    max-width: calc($unit * 15);
+                                    max-width: calc($unit * 24);
                                     padding-left: 1vw;
                                     @media (min-width: $lg) {
                                         padding-left: 0;
@@ -546,15 +577,12 @@ $xxl: 1400px;
                 display: block;
 
 
-                @media (min-width: $md) {
+                @media (min-width: $lg) {
                     display: flex;
                 }
 
                     .col-auto {
-                        text-align: center;
-                        @media (min-width: $sm) {
-                            text-align: start;
-                        }
+                        text-align: start;
                     }
 
                     img {
@@ -570,10 +598,7 @@ $xxl: 1400px;
                     
                     .details {  
                         padding-top: 3vh;
-                        text-align: center;
-                        @media (min-width: $sm) {
-                            text-align: start;
-                        }
+                        text-align: start;
                         
                         h3 {
                             color: var(--textColor);
@@ -633,7 +658,7 @@ $xxl: 1400px;
     margin: auto;
     display: flex !important;
     width: 100vw;
-    height: 6vh;
+    height: 4vh;
     z-index: 10;
     align-content: space-between;
 
@@ -655,7 +680,7 @@ $xxl: 1400px;
         height: 100%;
         padding: 0.5vh;
         background-color: black;
-        padding: .3vw .3vw 1vw;
+        padding: 1.7vh 0.3vw 1vw;
         height: auto;
         $path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
         -webkit-clip-path: $path;
@@ -668,6 +693,7 @@ $xxl: 1400px;
     
         @media (min-width: $lg) {
             margin-bottom: auto;
+            padding: .3vw .3vw 1vw;
             left: -10vw;
             transform-origin: top;
             transition: transform 0.5s ease;
@@ -695,6 +721,7 @@ $xxl: 1400px;
             height: 100%;
             display: flex;
             justify-content: space-between;
+            margin-left: 3vw;
 
             @media (min-width: $lg) {
                 width: auto;
@@ -710,7 +737,10 @@ $xxl: 1400px;
                 position: relative;
                 margin: auto;
                 line-height: 1;
-                padding: 0.5vh 1.5vh;
+                
+                @media (min-width: $lg) {
+                    padding: 0.5vh 1.5vh;
+                }
 
                 ::before {
                     content: " ";
