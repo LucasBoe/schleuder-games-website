@@ -339,6 +339,11 @@ $xxl: 1400px;
                 transform 0.3s ease,
                 opacity 0.5s ease;
 
+            i {
+                font-style: normal;
+                background-color: var(--backdropColor);
+            }
+
             &::before {
                 background-color: var(--backdropColor);
                 content: " ";
@@ -366,11 +371,6 @@ $xxl: 1400px;
 
                 @media (min-width: $md) {
                     padding: 0 16vh 3vh;
-                }
-
-                i {
-                    font-style: normal;
-                    background-color: var(--backdropColor);
                 }
                 
                 &::before {
@@ -480,6 +480,7 @@ $xxl: 1400px;
 
                     img {
                         width: auto;
+                        transform: translateY(8%);
                     }
                 }
             }
@@ -589,6 +590,24 @@ $xxl: 1400px;
                 }
             
         }
+
+        #imprint {
+            min-height: 100vh;
+            display: flex;
+
+            .all {
+                margin: auto;
+                width: 100%;
+
+                h1 {
+                    padding-bottom: 4vh;
+                }
+
+                h2 {
+                    padding-top: 1vh;
+                }
+            }
+        }
     }
 
     .overlay {
@@ -635,21 +654,24 @@ $xxl: 1400px;
         z-index: 20;
         height: 100%;
         padding: 0.5vh;
+        background-color: black;
+        padding: .3vw .3vw 1vw;
+        height: auto;
+        $path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
+        -webkit-clip-path: $path;
+        clip-path: $path;
+        left: 3vw;
+        top: 0;
+
+        margin-bottom: -8vh;
 
     
         @media (min-width: $lg) {
-            background-color: black;
-            height: auto;
-            padding: .3vw .3vw 1vw;
+            margin-bottom: auto;
             left: -10vw;
-            top: 0;
             transform-origin: top;
             transition: transform 0.5s ease;
             transform: scale(1);
-
-            $path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
-            -webkit-clip-path: $path;
-            clip-path: $path;
 
             &.small {
                 transform: scale(0.67);
