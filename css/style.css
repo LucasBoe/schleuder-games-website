@@ -525,36 +525,41 @@
 }
 @media (min-width: 992px) {
   :root .header-wrapper {
-    width: 64vw;
+    width: 80vw;
     max-width: 120vh;
-    margin-left: auto;
     margin-right: auto;
+    margin-left: auto;
     height: auto;
     background-color: transparent;
   }
 }
+@media (min-width: 1400px) {
+  :root .header-wrapper {
+    width: 64vw;
+    max-width: 120vh;
+  }
+}
 :root .header-wrapper #logo {
-  position: relative;
-  z-index: 20;
-  height: 100%;
-  padding: 0.5vh;
   background-color: black;
-  padding: 1.7vh 0.3vw 1vw;
+  position: relative;
+  padding-bottom: 1.5vh;
   height: auto;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
+  min-width: 9vh;
   left: 3vw;
   top: 0;
-  width: auto;
   margin-bottom: -8vh;
+  right: auto;
+  margin-right: auto;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
 }
-@media (min-width: 992px) {
+@media (min-width: 1400px) {
   :root .header-wrapper #logo {
     margin-bottom: auto;
-    padding: 0.3vw 0.3vw 1vw;
-    left: -10vw;
+    left: -12vw;
     transform-origin: top;
     transition: transform 0.5s ease;
+    width: auto;
     transform: scale(1);
   }
   :root .header-wrapper #logo.small {
@@ -562,12 +567,18 @@
   }
 }
 :root .header-wrapper #logo img {
-  height: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: 1vh;
 }
 @media (min-width: 992px) {
   :root .header-wrapper #logo img {
-    width: 8vw;
+    width: 10vw;
     height: auto;
+    position: relative;
+    padding-top: 1vw;
+    padding-left: 0.2vw;
+    padding-right: 0.2vw;
   }
 }
 :root .header-wrapper .nav {
