@@ -545,6 +545,7 @@
   clip-path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
   left: 3vw;
   top: 0;
+  width: auto;
   margin-bottom: -8vh;
 }
 @media (min-width: 992px) {
