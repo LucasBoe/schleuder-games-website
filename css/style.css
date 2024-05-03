@@ -383,7 +383,7 @@
 :root .content #spaceSprouts ul li {
   list-style: none;
   font-size: 1.7vh;
-  height: 5vh;
+  min-height: 5vh;
 }
 :root .content #spaceSprouts ul li img {
   width: auto;
@@ -391,7 +391,6 @@
 }
 :root .content #spaceSprouts .linkouts .row {
   display: block;
-  padding: calc((0.5vh + 0.5vw) * 4);
 }
 @media (min-width: 576px) {
   :root .content #spaceSprouts .linkouts .row {
@@ -405,6 +404,7 @@
   max-width: 100%;
   height: 10vh;
   padding-top: 1vh;
+  padding-left: 0;
   vertical-align: middle;
 }
 @media (min-width: 1200px) {
@@ -501,7 +501,7 @@
   z-index: 10;
 }
 :root .footer {
-  position: fixed;
+  position: absolute;
   right: 1.5vh;
   bottom: 0;
   background-color: var(--backdropColor);
