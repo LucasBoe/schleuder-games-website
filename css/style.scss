@@ -313,20 +313,22 @@ $xxl: 1400px;
 
     .maxW {
 
+        $maxW : unset;
+
         @media (min-width: $lg) {
             width: 80vw;
-            max-width: 120vh;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         @media (min-width: $xxl) {
-            width: 64vw;
+            $maxW: 64vw;
+        }
+
+        @media (min-width: $lg) {
+            $maxW: $maxW;
             max-width: 120vh;
             margin-left: auto;
             margin-right: auto;
         }
-
     }
 
     .content {
@@ -492,21 +494,79 @@ $xxl: 1400px;
         }
 
         #spaceSprouts {
-            ul {
-                padding: 0;
-                margin-bottom: 4vh;
 
-                li {
-                    list-style: none;
-                    font-size: $font-size-regular;                    
-                    min-height: 5vh;
-
-                    img {
-                        width: auto;
-                        transform: translateY(8%);
-                    }
+            .videoWrapper {
+                position: relative;
+                padding-bottom: 56.25%;
+                height: 0;
+                
+                iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
                 }
             }
+
+            .about {
+
+                .col {
+                    padding-top: 1vh;
+                }
+
+                .left {
+                    display: flex;
+                    flex-direction: column;
+
+                    * {
+                        margin: auto 0;
+                    }
+
+                    h2 {
+                        color: var(--textColor);
+                    }
+
+                    p {
+                        margin-top: 0;
+                    }
+                }
+                .right {
+                    ul {
+                        padding: 0;
+        
+                        li {
+                            list-style: none;             
+                            min-height: 5vh;
+                            display: flex;
+        
+                            img {
+                                width: auto;
+                                transform: translateY(8%);
+                            }
+                            .text {
+                                display: flex;
+                                p {
+                                    margin-top: auto;
+                                    margin-bottom: auto;
+                                    font-size: $font-size-regular;
+                                }
+                            }
+                        }
+                    }
+                }
+                .line {
+                    max-width: 3px;
+                    padding: 3vh;
+                    &::after {
+                        height: 100%;
+                        width: 3px;
+                        display: block;
+                        content: " ";
+                        background-color: var(--backgroundColor);
+                      }
+                    }
+                }
 
             .linkouts {
                 .row {

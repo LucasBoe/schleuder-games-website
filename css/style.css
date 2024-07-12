@@ -241,14 +241,10 @@
 @media (min-width: 992px) {
   :root .maxW {
     width: 80vw;
-    max-width: 120vh;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
-@media (min-width: 1400px) {
+@media (min-width: 992px) {
   :root .maxW {
-    width: 64vw;
     max-width: 120vh;
     margin-left: auto;
     margin-right: auto;
@@ -376,18 +372,64 @@
   -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
 }
-:root .content #spaceSprouts ul {
+:root .content #spaceSprouts .videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+:root .content #spaceSprouts .videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+:root .content #spaceSprouts .about .col {
+  padding-top: 1vh;
+}
+:root .content #spaceSprouts .about .left {
+  display: flex;
+  flex-direction: column;
+}
+:root .content #spaceSprouts .about .left * {
+  margin: auto 0;
+}
+:root .content #spaceSprouts .about .left h2 {
+  color: var(--textColor);
+}
+:root .content #spaceSprouts .about .left p {
+  margin-top: 0;
+}
+:root .content #spaceSprouts .about .right ul {
   padding: 0;
-  margin-bottom: 4vh;
 }
-:root .content #spaceSprouts ul li {
+:root .content #spaceSprouts .about .right ul li {
   list-style: none;
-  font-size: 1.7vh;
   min-height: 5vh;
+  display: flex;
 }
-:root .content #spaceSprouts ul li img {
+:root .content #spaceSprouts .about .right ul li img {
   width: auto;
   transform: translateY(8%);
+}
+:root .content #spaceSprouts .about .right ul li .text {
+  display: flex;
+}
+:root .content #spaceSprouts .about .right ul li .text p {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 1.7vh;
+}
+:root .content #spaceSprouts .about .line {
+  max-width: 3px;
+  padding: 3vh;
+}
+:root .content #spaceSprouts .about .line::after {
+  height: 100%;
+  width: 3px;
+  display: block;
+  content: " ";
+  background-color: var(--backgroundColor);
 }
 :root .content #spaceSprouts .linkouts .row {
   display: block;
