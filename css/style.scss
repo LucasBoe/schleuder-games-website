@@ -140,6 +140,10 @@ $xxl: 1400px;
         clip-path: $path;
     }
 
+    .block {
+        display: block !important;
+    }
+
     .speechbubble-bottom { 
         margin: 2vh auto;
         display: block;
@@ -495,6 +499,11 @@ $xxl: 1400px;
 
         #spaceSprouts {
 
+            .wrap {
+                padding: 0 16vh;
+            }
+    
+
             .videoWrapper {
                 position: relative;
                 padding-bottom: 56.25%;
@@ -512,7 +521,7 @@ $xxl: 1400px;
             .about {
 
                 .col {
-                    padding-top: 1vh;
+                    padding-top: 2vh;
                 }
 
                 .left {
@@ -541,8 +550,10 @@ $xxl: 1400px;
                             display: flex;
         
                             img {
-                                width: auto;
+                                width: 8vh;
+                                height: auto;
                                 transform: translateY(8%);
+                                padding: 1.2vh;
                             }
                             .text {
                                 display: flex;
@@ -557,75 +568,102 @@ $xxl: 1400px;
                 }
                 .line {
                     max-width: 3px;
-                    padding: 3vh;
+                    padding: 7vh 4vh 4vh;
                     &::after {
                         height: 100%;
                         width: 3px;
                         display: block;
                         content: " ";
                         background-color: var(--backgroundColor);
-                      }
+                        }
+                      
+                        display: none;
+                      
+                        @media (min-width: $lg){
+                          display: block;
+                        } 
                     }
                 }
 
+            .pictures {
+                padding: 4vh 0;
+                img {
+                    padding: 1vh;
+                }
+            }
+
+            .mid { 
+                &.block {
+                max-height: unset;
+                }
+            }
+
             .linkouts {
-                .row {
-                    display: block;                   
+   
+                .button {
 
-                    @media (min-width: $sm) {
-                        display: inherit;
-                        align-items: center;
-                        padding: 0;
+                    $buttom-height : 8vh;
+
+                    width: 80%;
+                    min-width: 80%;
+
+                    height: $buttom-height;
+                    padding-left: 0;
+                    background-color: var(--highlightColor);
+                    border-radius: $buttom-height;
+                    display: flex;
+
+                    outline: black 1vh solid;
+                    cursor: pointer;
+
+                    margin: 1vh;
+
+                    @media (min-width: $xl) {
+                        padding-top: 0;
+                        max-width: 40%;
+                    } 
+
+                    @media (min-width: $lg) {
+                        min-width: unset;
                     }
 
-                    .col {
-                        width: 100%;
-                        max-width: 100%;
-                        height: 10vh;
-                        padding-top: 1vh;
-                        padding-left: 0;
-                        vertical-align: middle;
-
-                        @media (min-width: $xl) {
-                            padding-top: 0;
-                            max-width: 33%;
-                        }
-
-                        .item {
-                            display: flex;
-                            align-items: center;
-                            font-size: $font-size-regular;
-
-                            :first-child {
-                                padding-right: 1vh;
-                            }
-
-                            img {
-                                width: auto;
-                                max-width: 8vh;
-                            }
-                            &.regular {                                
-                            font-size: $font-size-bigger;
-                                @media (min-width: $lg) {
-                                    font-size: $font-size-regular;
-                                }
-                            }
-                            
-                            &.special {
-                                display: flex;
-                                flex-direction: column;
-                                align-items: baseline;
-                                img {
-                                    width: 100%;
-                                    max-width: calc($unit * 24);
-                                    padding-left: 1vw;
-                                    @media (min-width: $lg) {
-                                        padding-left: 0;
-                                    }
-                                }
-                            }
-                        }  
+                    &.l-auto {
+                        margin-left: auto;
                     }
+
+                    &.r-auto {
+                        margin-right: auto;
+                    }
+
+                    img {
+                        height: calc($buttom-height - 1vh);
+                        margin-left: .5vh;
+                        margin-top: .5vh;
+                        filter: invert(100%) 
+                    }
+
+                    p {
+                        font-size: $font-size-bigger;
+                        font-weight: 600;
+                        margin: auto;
+                    }
+                }
+            }
+
+            .funded-by {
+                min-height: 20vh;
+                padding-top: 2vh;
+
+                .col {
+                padding-left: 5px;
+                padding-right: 5px;   
+                }
+
+                p {
+                    text-align: right;
+                }
+                img {
+                    height: 10vh;
                 }
             }
         }

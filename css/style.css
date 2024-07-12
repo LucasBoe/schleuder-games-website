@@ -103,6 +103,9 @@
   -webkit-clip-path: polygon(0 0, 100% 0, 50% 100%);
   clip-path: polygon(0 0, 100% 0, 50% 100%);
 }
+:root .block {
+  display: block !important;
+}
 :root .speechbubble-bottom {
   margin: 2vh auto;
   display: block;
@@ -372,6 +375,9 @@
   -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
 }
+:root .content #spaceSprouts .wrap {
+  padding: 0 16vh;
+}
 :root .content #spaceSprouts .videoWrapper {
   position: relative;
   padding-bottom: 56.25%;
@@ -385,7 +391,7 @@
   height: 100%;
 }
 :root .content #spaceSprouts .about .col {
-  padding-top: 1vh;
+  padding-top: 2vh;
 }
 :root .content #spaceSprouts .about .left {
   display: flex;
@@ -409,8 +415,10 @@
   display: flex;
 }
 :root .content #spaceSprouts .about .right ul li img {
-  width: auto;
+  width: 8vh;
+  height: auto;
   transform: translateY(8%);
+  padding: 1.2vh;
 }
 :root .content #spaceSprouts .about .right ul li .text {
   display: flex;
@@ -422,7 +430,8 @@
 }
 :root .content #spaceSprouts .about .line {
   max-width: 3px;
-  padding: 3vh;
+  padding: 7vh 4vh 4vh;
+  display: none;
 }
 :root .content #spaceSprouts .about .line::after {
   height: 100%;
@@ -431,64 +440,73 @@
   content: " ";
   background-color: var(--backgroundColor);
 }
-:root .content #spaceSprouts .linkouts .row {
-  display: block;
-}
-@media (min-width: 576px) {
-  :root .content #spaceSprouts .linkouts .row {
-    display: inherit;
-    align-items: center;
-    padding: 0;
+@media (min-width: 992px) {
+  :root .content #spaceSprouts .about .line {
+    display: block;
   }
 }
-:root .content #spaceSprouts .linkouts .row .col {
-  width: 100%;
-  max-width: 100%;
-  height: 10vh;
-  padding-top: 1vh;
+:root .content #spaceSprouts .pictures {
+  padding: 4vh 0;
+}
+:root .content #spaceSprouts .pictures img {
+  padding: 1vh;
+}
+:root .content #spaceSprouts .mid.block {
+  max-height: unset;
+}
+:root .content #spaceSprouts .linkouts .button {
+  width: 80%;
+  min-width: 80%;
+  height: 8vh;
   padding-left: 0;
-  vertical-align: middle;
+  background-color: var(--highlightColor);
+  border-radius: 8vh;
+  display: flex;
+  outline: black 1vh solid;
+  cursor: pointer;
+  margin: 1vh;
 }
 @media (min-width: 1200px) {
-  :root .content #spaceSprouts .linkouts .row .col {
+  :root .content #spaceSprouts .linkouts .button {
     padding-top: 0;
-    max-width: 33%;
+    max-width: 40%;
   }
 }
-:root .content #spaceSprouts .linkouts .row .col .item {
-  display: flex;
-  align-items: center;
-  font-size: 1.7vh;
+@media (min-width: 992px) {
+  :root .content #spaceSprouts .linkouts .button {
+    min-width: unset;
+  }
 }
-:root .content #spaceSprouts .linkouts .row .col .item :first-child {
-  padding-right: 1vh;
+:root .content #spaceSprouts .linkouts .button.l-auto {
+  margin-left: auto;
 }
-:root .content #spaceSprouts .linkouts .row .col .item img {
-  width: auto;
-  max-width: 8vh;
+:root .content #spaceSprouts .linkouts .button.r-auto {
+  margin-right: auto;
 }
-:root .content #spaceSprouts .linkouts .row .col .item.regular {
+:root .content #spaceSprouts .linkouts .button img {
+  height: 7vh;
+  margin-left: 0.5vh;
+  margin-top: 0.5vh;
+  filter: invert(100%);
+}
+:root .content #spaceSprouts .linkouts .button p {
   font-size: 2.5vh;
+  font-weight: 600;
+  margin: auto;
 }
-@media (min-width: 992px) {
-  :root .content #spaceSprouts .linkouts .row .col .item.regular {
-    font-size: 1.7vh;
-  }
+:root .content #spaceSprouts .funded-by {
+  min-height: 20vh;
+  padding-top: 2vh;
 }
-:root .content #spaceSprouts .linkouts .row .col .item.special {
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
+:root .content #spaceSprouts .funded-by .col {
+  padding-left: 5px;
+  padding-right: 5px;
 }
-:root .content #spaceSprouts .linkouts .row .col .item.special img {
-  width: 100%;
-  max-width: calc((0.5vh + 0.5vw) * 24);
-  padding-left: 1vw;
+:root .content #spaceSprouts .funded-by p {
+  text-align: right;
 }
-@media (min-width: 992px) {
-  :root .content #spaceSprouts .linkouts .row .col .item.special img {
-    padding-left: 0;
-  }
+:root .content #spaceSprouts .funded-by img {
+  height: 10vh;
 }
 :root .content #team .row {
   padding-bottom: 20px;
