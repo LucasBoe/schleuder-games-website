@@ -376,7 +376,7 @@
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
 }
 :root .content #spaceSprouts .wrap {
-  padding: 0 16vh;
+  padding-bottom: 0;
 }
 :root .content #spaceSprouts .videoWrapper {
   position: relative;
@@ -417,6 +417,7 @@
 :root .content #spaceSprouts .about .right ul li img {
   width: 8vh;
   height: auto;
+  max-height: 10vh;
   transform: translateY(8%);
   padding: 1.2vh;
 }
