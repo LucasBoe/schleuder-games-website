@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Schleuder Games</title>
   <link rel='stylesheet' href='//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
-  <link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/helpers.css">
@@ -102,7 +102,7 @@
         <img class="header" src="img/header.png">
       </div>
       <div class="backdrop mid">
-        <h1 class="scroll-fade"><i>Ahoi & Hello</i><span style="top: -6.5vh; left: -14%;">Juicy!</span></h1>
+        <h1 class="scroll-fade"><i>Ahoi & Hello</i><span class="bubble" style="top: -6.5vh; left: -14%;">Juicy!</span></h1>
       </div>
       <div class="backdrop bot">
         <div class="wrap">
@@ -134,13 +134,13 @@
       </div>
       <div class="backdrop mid">
         <h1 class="scroll-fade">What is<br><i>Space Sprouts?</i>
-          <span class="left" style="top: 0; right: -11%;">Noice!</span></h1>
+          <span class="bubble left" style="top: 0; right: -11%;">Noice!</span></h1>
       </div>
       <div class="backdrop">
         <div class="wrap">
           <div class="videoWrapper scroll-fade">
             <iframe src="https://www.youtube.com/embed/xwpraU_68OY?si=4gEglWVY1J1iLrIi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-              <span class="left" style="top: 0; right: -11%;">Wow!</span>
+              <span class="bubble left" style="top: 0; right: -11%;">Wow!</span>
             </iframe>
           </div>
           <div class="about row">
@@ -221,6 +221,60 @@
             </div>
           </div>
           -->
+          <div class="reviews">
+            <h2>PRESS VOICES</h2>
+
+            <div id="carouselReviewsIndicators" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="review">
+                    <i>"If you’re looking for a lighthearted game full of warmth, curiosity, and tiny moments of meaning, this one’s worth your time."</i>
+                    <div class="line"></div>
+                    <p>- thecosygamers.com</p>
+                    <a href="https://www.thecosygamers.com/space-sprouts-is-an-adorable-game-about-the-power-of-memory/">read the full review</a>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="review">
+                    <i>"With 100 memories to unlock and a bunch of fun to be had, Space Sprouts is a perfect little game."</i>
+                    <div class="line"></div>
+                    <p>- elderlygoose.wordpress.com</p>
+                    <a href="https://elderlygoose.wordpress.com/2025/03/28/space-sprouts-pc/">read the full review</a>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="review">
+                    <i>"The game asks us to be almost childlike in our wonder, only to answer that curiosity with an abundance of fun."</i>
+                    <div class="line"></div>
+                    <p>- somanygames.co.uk</p>
+                    <a href="https://somanygames.co.uk/review/space-sprouts/">read the full review</a>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="review">
+                    <i>"Space Sprouts took the time loop genre and added a cozy and chaotic twist that successfully encourages sandbox-like exploration."</i>
+                    <div class="line"></div>
+                    <p>- nosmallgames.com</p>
+                    <a href="https://nosmallgames.com/2025/04/space-sprouts-review/">read the full review</a>
+                  </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselReviewsIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselReviewsIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+              <ol class="carousel-indicators">
+                <li data-target="#carouselReviewsIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselReviewsIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselReviewsIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselReviewsIndicators" data-slide-to="3"></li>
+              </ol>
+            </div>
+          </div>
         </div>
       </div>
       <div class="backdrop mid block">
@@ -253,7 +307,7 @@
       <div class="backdrop top">
       </div>
       <div class="backdrop mid">
-        <h1 class="scroll-fade"><i>THE SCHLEUDER GANG<span style="left: 35%; top: -6.5vh;">Sick!</i></span></h1>
+        <h1 class="scroll-fade"><i>THE SCHLEUDER GANG<span class="bubble" style="left: 35%; top: -6.5vh;">Sick!</i></span></h1>
       </div>
       <div class="backdrop bot">
         <div>
@@ -311,7 +365,7 @@
 </body>
 <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
-<script src='//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js'></script>
+<script src='https://netdna.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js'></script>
 <script src='js/backgroundAnimator.js'></script>
 <script src="js/scrolEffects.js"></script>
 <script src="js/shuffleTeam.js"></script>

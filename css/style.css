@@ -57,7 +57,7 @@
   font-style: normal;
   font-size: 1.8vh;
 }
-:root span {
+:root .bubble {
   position: absolute;
   color: var(--textColor);
   background-color: var(--backgroundColor);
@@ -69,18 +69,18 @@
   padding: 1vh 2vh;
 }
 @media (min-width: 768px) {
-  :root span {
+  :root .bubble {
     padding: 0.1vh 0.5vh;
     font-size: 4.5vh;
   }
 }
-:root span.left {
+:root .bubble.left {
   transform: rotate(15deg);
 }
-:root span.out {
+:root .bubble.out {
   transform: rotate(0) scale(0);
 }
-:root span::before {
+:root .bubble::before {
   background-color: var(--backgroundColor);
   position: absolute;
   left: -0.5vh;
@@ -90,7 +90,7 @@
   content: " ";
   z-index: -1;
 }
-:root span::after {
+:root .bubble::after {
   position: absolute;
   left: calc(50% - 0.75vh);
   bottom: calc(-1.5vh + 1px);
@@ -451,6 +451,91 @@
 }
 :root .content #spaceSprouts .pictures img {
   padding: 1vh;
+}
+:root .content #spaceSprouts .reviews {
+  text-align: center;
+  padding-bottom: 1vh;
+}
+:root .content #spaceSprouts .reviews h2 {
+  color: var(--textColor);
+  font-size: 2.5vh;
+}
+:root .content #spaceSprouts .reviews h2::before {
+  background-image: url("../img/line.png");
+  content: " ";
+  display: flex;
+  height: 4vh;
+  background-repeat: repeat-x;
+  background-size: 2.6vh;
+  margin: 0 5vw;
+}
+:root .content #spaceSprouts .reviews .review {
+  margin: 0 5vw;
+  padding: 10px 0px;
+}
+:root .content #spaceSprouts .reviews .review i {
+  font-size: 2.5vh;
+  font-style: italic;
+  margin: 10px 0;
+}
+:root .content #spaceSprouts .reviews .review p {
+  font-size: 2.5vh;
+}
+:root .content #spaceSprouts .reviews .review a {
+  text-decoration: underline;
+  color: var(--highlightColor);
+}
+:root .content #spaceSprouts .reviews .review .line {
+  background-image: url("../img/line.png");
+  display: block;
+  height: 4vh;
+  background-repeat: repeat-x;
+  background-size: 2.6vh;
+  background-position-y: center;
+  width: 5vw;
+  margin: auto;
+}
+:root .content #spaceSprouts .reviews .carousel-indicators {
+  position: relative;
+}
+:root .content #spaceSprouts .reviews .carousel-indicators li {
+  margin-left: 1vh;
+  margin-right: 1vh;
+  width: 1.5vh;
+  height: 1.5vh;
+  border-radius: 100%;
+  background-color: var(--textColor);
+  opacity: 1;
+  transition: background-color 0.2s linear;
+}
+:root .content #spaceSprouts .reviews .carousel-indicators li.active {
+  background-color: var(--highlightColor);
+}
+:root .content #spaceSprouts .reviews .carousel-control-prev {
+  opacity: 1;
+}
+:root .content #spaceSprouts .reviews .carousel-control-prev .carousel-control-prev-icon {
+  background-image: url("../img/Arrow-L.png");
+  width: 4vh;
+  height: 4vh;
+  transition: transform 0.2s;
+  transform: scale(1);
+}
+:root .content #spaceSprouts .reviews .carousel-control-prev .carousel-control-prev-icon:hover {
+  transform: scale(1.1);
+}
+:root .content #spaceSprouts .reviews .carousel-control-next {
+  opacity: 1;
+}
+:root .content #spaceSprouts .reviews .carousel-control-next .carousel-control-next-icon {
+  background-image: url("../img/Arrow-R.png");
+  width: 4vh;
+  height: 4vh;
+  transition: transform 0.2s;
+  transform: scale(1);
+}
+:root .content #spaceSprouts .reviews .carousel-control-next .carousel-control-next-icon:hover {
+  transform: scale(1.1);
 }
 :root .content #spaceSprouts .mid.block {
   max-height: unset;
