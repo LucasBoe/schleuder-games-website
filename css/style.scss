@@ -35,6 +35,7 @@ $xxl: 1400px;
     }
 
     body {
+        position: relative;
         font-family: 'Exo', sans-serif;
         font-weight: 300;
         color: var(--textColor);
@@ -933,76 +934,81 @@ $xxl: 1400px;
             }
         }
     }
-    
-    .nav {       
-            width: 100%;
-            z-index: 20;
 
-            height: 100%;
-            display: flex;
-            justify-content: space-between;
-            margin-left: 3vw;
-
-            @media (min-width: $lg) {
-                width: auto;
-                height: auto;
-                position: absolute;
-                background-color: var(--backgroundColor);
-                right: 0;
-                padding: 0.2% 1%;
-                margin: 2%;
-            }
-            li {
-                display: inline-block; 
-                position: relative;
-                margin: auto;
-                line-height: 1;
-                
-                @media (min-width: $lg) {
-                    padding: 0.5vh 1.5vh;
-                }
-
-                ::before {
-                    content: " ";
-                    background-color: var(--highlightColor);
-                    position: absolute;
-                    width: 100%;
-                    height: 0%;
-                    top: 110%;
-                    left: 0;
-                    z-index: -10;
-                    transform: rotate(-2deg);
-                    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-                }
-                
-                &.active {
-                    ::before {
-                        height: 50%;
-                        top: 50%;
-                        transform: rotate(0deg);
-                    }
-                }
-                
-                &:hover {
-                    ::before {
-                        height: 100%;
-                            top: 0;
-                            transform: rotate(2deg);
-                        }
-                    }
-                    a {
-                        font-size: $font-size-normal;
-                        padding: 2% 1vh;
-                        font-weight: 700;
-                        color: var(--backdropColor);
-                        text-transform: uppercase;
-                        &:hover {
-                            background-color: transparent;
-                        }
-                    }
-                }
+    .nav {
+        width: 100%;
+        z-index: 20;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-left: 3vw;
+      
+        @media (min-width: $lg) {
+          width: auto;
+          height: auto;
+          position: absolute;
+          background-color: var(--backgroundColor);
+          right: 0;
+          padding: 0.2% 1%;
+          margin: 2%;
         }
-    }
+      
+        // nav-item holds the sizing/alignment of each link
+        .nav-item {
+          display: inline-block;
+          margin: auto;
+          line-height: 1;
+      
+          @media (min-width: $lg) {
+            padding: 0.5vh 1.5vh;
+          }
+      
+          // the link itself gets the hover/active pseudo-element
+          .nav-link {
+            position: relative;
+            display: inline-block;
+            font-size: $font-size-normal;
+            padding: 2% 1vh;
+            font-weight: 700;
+            color: var(--backdropColor);
+            text-transform: uppercase;
+            background-color: transparent; // reset any default
+      
+            // the “highlight” behind each link
+            &::before {
+              content: "";
+              background-color: var(--highlightColor);
+              position: absolute;
+              width: 100%;
+              height: 0%;
+              top: 110%;
+              left: 0;
+              z-index: -1;
+              transform: rotate(-2deg);
+              transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+      
+            // active state from ScrollSpy (on the <a>)
+            &.active::before {
+              height: 50%;
+              top: 50%;
+              transform: rotate(0deg);
+            }
+      
+            // hover state
+            &:hover::before {
+              height: 100%;
+              top: 0;
+              transform: rotate(2deg);
+            }
+      
+            &:hover {
+              background-color: transparent;
+            }
+          }
+        }
+      }
+    }      
 
     .scroll-fade {
         opacity: 0;

@@ -14,6 +14,7 @@
   src: url("../fonts/x16y32pxGridGazer.woff") format("woff"), url("../fonts/x16y32pxGridGazer.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
 }
 :root body {
+  position: relative;
   font-family: "Exo", sans-serif;
   font-weight: 300;
   color: var(--textColor);
@@ -746,47 +747,49 @@
     margin: 2%;
   }
 }
-:root .header-wrapper .nav li {
+:root .header-wrapper .nav .nav-item {
   display: inline-block;
-  position: relative;
   margin: auto;
   line-height: 1;
 }
 @media (min-width: 992px) {
-  :root .header-wrapper .nav li {
+  :root .header-wrapper .nav .nav-item {
     padding: 0.5vh 1.5vh;
   }
 }
-:root .header-wrapper .nav li ::before {
-  content: " ";
+:root .header-wrapper .nav .nav-item .nav-link {
+  position: relative;
+  display: inline-block;
+  font-size: 1.9vh;
+  padding: 2% 1vh;
+  font-weight: 700;
+  color: var(--backdropColor);
+  text-transform: uppercase;
+  background-color: transparent;
+}
+:root .header-wrapper .nav .nav-item .nav-link::before {
+  content: "";
   background-color: var(--highlightColor);
   position: absolute;
   width: 100%;
   height: 0%;
   top: 110%;
   left: 0;
-  z-index: -10;
+  z-index: -1;
   transform: rotate(-2deg);
   transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-:root .header-wrapper .nav li.active ::before {
+:root .header-wrapper .nav .nav-item .nav-link.active::before {
   height: 50%;
   top: 50%;
   transform: rotate(0deg);
 }
-:root .header-wrapper .nav li:hover ::before {
+:root .header-wrapper .nav .nav-item .nav-link:hover::before {
   height: 100%;
   top: 0;
   transform: rotate(2deg);
 }
-:root .header-wrapper .nav li a {
-  font-size: 1.9vh;
-  padding: 2% 1vh;
-  font-weight: 700;
-  color: var(--backdropColor);
-  text-transform: uppercase;
-}
-:root .header-wrapper .nav li a:hover {
+:root .header-wrapper .nav .nav-item .nav-link:hover {
   background-color: transparent;
 }
 :root .scroll-fade {
