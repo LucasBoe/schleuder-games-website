@@ -51,14 +51,14 @@ function makeOpaqueByScroll(amount) {
     
 
     var logoShouldBeSmall = amount > 100;
-    var logoIsSmall = $("#logo").hasClass("small");
+    var logoIsSmall = $("#logo-collumn").hasClass("small");
 
     if (logoIsSmall != logoShouldBeSmall) {
         if (logoShouldBeSmall)
         {
-            $("#logo").addClass("small");
+            $("#logo-collumn").addClass("small");
         } else {
-            $("#logo").removeClass("small");
+            $("#logo-collumn").removeClass("small");
         }
     }
 }
