@@ -655,18 +655,20 @@
 :root .header-wrapper {
   position: fixed;
   top: 0;
-  margin: auto;
   display: flex !important;
   width: 100vw;
   height: 4vh;
   z-index: 10;
   align-content: space-between;
   background-color: #1abc94;
+  padding: 0 10vw;
 }
 @media (min-width: 992px) {
   :root .header-wrapper {
+    padding: unset;
     width: 80vw;
     max-width: 120vh;
+    margin: auto;
     margin-right: auto;
     margin-left: auto;
     height: auto;
@@ -680,7 +682,6 @@
   }
 }
 :root .header-wrapper #logo-collumn {
-  display: flex;
   flex-direction: column;
   align-items: center;
   height: 100%;
@@ -694,6 +695,12 @@
   transform: scale(0.85);
   transition: transform 0.5s ease;
   transform-origin: top;
+  display: none;
+}
+@media (min-width: 992px) {
+  :root .header-wrapper #logo-collumn {
+    display: flex;
+  }
 }
 :root .header-wrapper #logo-collumn.small {
   transform: scale(0.67);
@@ -729,12 +736,10 @@
 }
 :root .header-wrapper #logo-collumn a {
   width: 0;
-  display: none;
 }
 @media (min-width: 992px) {
   :root .header-wrapper #logo-collumn a {
     width: 10vw;
-    display: block;
   }
 }
 :root .header-wrapper #logo-collumn a .linkout {

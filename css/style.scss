@@ -863,7 +863,6 @@ $xxl: 1400px;
 .header-wrapper {
     position: fixed;
     top: 0;
-    margin: auto;
     display: flex !important;
     width: 100vw;
     height: 4vh;
@@ -872,10 +871,14 @@ $xxl: 1400px;
 
     background-color: #1abc94;
 
+    padding: 0 10vw;
+
 
     @media (min-width: $lg) {
+        padding: unset;
         width: 80vw;
         max-width: 120vh;
+        margin: auto;
         margin-right: auto;
         margin-left: auto;
         height: auto;
@@ -887,50 +890,82 @@ $xxl: 1400px;
         max-width: 120vh;
     }
 
-    #logo {
-        background-color: black;
+    #logo-collumn {
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
         position: relative;
-        padding-bottom: 1.5vh;
         height: auto;       
         min-width: 9vh;;
         left: 3vw;
         top: 0;
-        margin-bottom: -8vh;
         right: auto;
         margin-right: auto;
 
-        
-        $path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
-        -webkit-clip-path: $path;
-        clip-path: $path;
-        
+        transform: scale(.85);
+        transition: transform 0.5s ease;
+        transform-origin: top;
+
+        display: none;
+        @media (min-width: $lg) {
+            display: flex;
+        }
+
+        &.small {
+            transform: scale(0.67);
+        }
+
+
+            @media (min-width: $xxl) {
+                left: -12vw;
+                margin-bottom: auto;
+                transform-origin: top;
+                width: auto;
+            }
+
 
     
-        @media (min-width: $xxl) {
-            margin-bottom: auto;
-            left: -12vw;
-            transform-origin: top;
-            transition: transform 0.5s ease;
-            width: auto;
-            transform: scale(1);
+        #logo {
+            background-color: black;
+            padding-bottom: 1.5vh;
+            $path: polygon(0 0, 100% 0, 100% 97%, 0 100%);
+            -webkit-clip-path: $path;
+            clip-path: $path;
+            margin-bottom: .25vw;
 
-            &.small {
-                transform: scale(0.67);
+            img {
+                width: 100%;
+                position: absolute;
+                bottom: 1vh;
+
+                @media (min-width: $lg) {
+                    width: 10vw;
+                    height: auto;
+                    position: relative;
+                    padding-top: 1vw;
+                    padding-left: 0.2vw;
+                    padding-right: 0.2vw;
+                }
             }
         }
 
-        img {
-            width: 100%;
-            position: absolute;
-            bottom: 1vh;
-
+        a {
+            width: 0;
             @media (min-width: $lg) {
                 width: 10vw;
-                height: auto;
-                position: relative;
-                padding-top: 1vw;
-                padding-left: 0.2vw;
-                padding-right: 0.2vw;
+            }
+
+            .linkout {
+                background-color: black;
+                $path: polygon(0 6%, 100% 0, 100% 94%, 0 100%);
+                -webkit-clip-path: $path;
+                clip-path: $path;
+                padding: 1.5vw 1.25vw;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
             }
         }
     }
